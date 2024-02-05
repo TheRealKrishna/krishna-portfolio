@@ -34,36 +34,90 @@
 }
 
 .heroContent h3 {
+    margin: 0px !important;
     font-size: 3rem;
     font-weight: 500;
-    line-height: 5rem;
     margin-inline: 5px;
     position: relative;
+    margin-bottom: 0px;
     animation: animatetop 2s;
 }
 
 .heroContent h2 {
+    margin: 0px !important;
     font-size: 3.8rem;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 5rem;
+    margin-top: 0px;
     margin-bottom: 1rem;
     margin-inline: 5px;
     position: relative;
     animation: animateleft 2s;
 }
 
+.typeWriterContainer {
+    margin: 0px !important;
+    display: flex;
+}
+
+.typeWriterContainer>span {
+    margin: 0px !important;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 5rem;
+    margin-top: 0px;
+    position: relative;
+    animation: animatebottom 2s;
+    white-space: nowrap;
+}
+
+.typeWriterContainer>div>span {
+    margin: 0px !important;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 5rem;
+    margin-top: 0px;
+    position: relative;
+    animation: animatebottom 2s;
+    white-space: nowrap;
+    color:#7e61e7;
+}
+
 .heroContent p {
+    margin: 0px !important;
     width: 80%;
     font-size: 1rem;
     font-weight: 400;
     line-height: 2rem;
     margin-inline: 5px;
+    position: relative;
+    animation: animatebottom 2s;
+}
+
+.socialIconsContainer{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.socialIconsImage{
+    width: 3em;
+    height: 3rem;
+    position: relative;
+    animation: animatebottom 2s;
+}
+
+.socialIconsImage:hover{
+    /* transform: translateY(-15px); */
+    transform: translateY(-0.5rem);
+    transition: all .3s ease;
 }
 
 .heroImage {
     width: 400px;
     border-radius: 30px;
-    position:relative;
+    position: relative;
     animation: animateright 2s;
 }
 
@@ -128,6 +182,18 @@
     }
 }
 
+@keyframes animatebottom {
+    from {
+        top: 300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
 @keyframes animateleft {
     from {
         left: -300px;
@@ -143,12 +209,12 @@
 @keyframes animateright {
     from {
         right: -300px;
-        opacity: 0
+        opacity: 1; /* Should Be 0 */
     }
 
     to {
         right: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -197,12 +263,32 @@
         margin: 2rem 0 2rem 0;
     }
 
+    .heroContainer h3{
+        margin-top: 2rem !important;
+        font-size: 2rem;
+    }
+
     .heroContainer h2 {
-        margin-top: 3rem;
+        font-size: 2.2rem;
+    }
+
+    .typeWriterContainer{
+        justify-content: center;
+    }
+
+    .typeWriterContainer>span {
+        font-size: 1.2rem;
+    }
+
+    .typeWriterContainer>div>span {
+        font-size: 1.4rem;
     }
 
     .heroContent h2,
-    .heroContent p {
+    .heroContent p,
+    .heroContent h3,
+    .typeWriterContainer>span,
+    .typeWriterContainer>div>span {
         width: auto;
         text-align: center;
     }
@@ -226,6 +312,12 @@
 }
 
 @media (max-width:600px) {
+
+    .heroContent h3 {
+        font-size: 2rem;
+        line-height: 1.3rem;
+    }
+
     .heroContent h2 {
         font-size: 2.2rem;
         line-height: 3rem;
@@ -234,6 +326,16 @@
     .heroContent p {
         font-size: 0.8rem;
         line-height: 1.3rem;
+    }
+
+    .typeWriterContainer>span {
+        font-size: .8rem;
+        line-height: 2.1rem;
+    }
+
+    .typeWriterContainer>div>span {
+        font-size: 1rem;
+        line-height: 2rem;
     }
 
     .heroImg {

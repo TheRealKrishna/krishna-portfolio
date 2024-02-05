@@ -5,6 +5,7 @@ import logo from "../assets/logo.png"
 export default function MobileNavbar({ isMenuOpen, toggleMenu }) {
   return (
     <>
+      <div className={`${Styles.mobileMenuOverlay} ${isMenuOpen ? Styles.active : ""}`}></div>
       <div className={`${Styles.mobileMenu} ${isMenuOpen ? Styles.active : ""}`} onClick={toggleMenu}>
         <div className={Styles.mobileMenuContainer}>
           <div className={Styles.navLogoContainer}><img className={Styles.navLogo} src={logo} alt="Logo" /></div>
