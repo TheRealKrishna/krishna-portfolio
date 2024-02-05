@@ -1,0 +1,90 @@
+.navList {
+    list-style: none;
+    padding: 15px 0px;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 20px 0px;
+}
+
+.navLogoContainer {
+    width: 100%;
+}
+
+.navLogo {
+    position: relative;
+    width: 100%;
+}
+
+.navListItem {
+    text-decoration: none;
+    position: relative;
+    color: white;
+    text-wrap: nowrap;
+}
+
+.hireMeButton {
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+    padding: 0.6rem 2rem;
+    border: none;
+    outline: 1.5px solid transparent;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.hireMeButton:hover {
+    color: #a993fe;
+    background: #000;
+    outline: 1.5px solid #a993fe;
+}
+
+.mobileMenu{
+    display: none;
+    width: 1000vw;
+    height: 1000vw;
+    background-color: rgb(0,0,0,0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999 !important;
+    opacity: 0;
+    box-shadow: 0px 29px 80px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    transform: translateX(-100vw);
+}
+
+.mobileMenuContainer{
+    width: 60vw;
+    height: 100vh;
+    background-color: #342864;
+    padding: 2rem;
+}
+
+.mobileMenu.active{
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2rem;
+    gap: 2rem;
+    list-style: none;
+    margin-left: -2rem;
+}
+
+@media(max-width:769px) {
+    .mobileMenu{
+        display: block;
+    }
+}

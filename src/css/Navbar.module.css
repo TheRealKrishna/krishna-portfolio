@@ -1,0 +1,116 @@
+.navWrapper {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 20px 0px;
+}
+
+.navLogoContainer {
+    width: 250px;
+}
+
+.navLogo {
+    width: 250px;
+}
+
+.navListItem {
+    text-decoration: none;
+    position: relative;
+    color: white;
+    text-wrap: nowrap;
+}
+
+.navListItem::before {
+    content: " ";
+    width: 2rem;
+    height: 0.2rem;
+    background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: -0.6rem;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: all 0.3s ease;
+}
+
+.navListItem:hover::before {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.hireMeButton {
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+    padding: 0.6rem 2rem;
+    border: none;
+    outline: 1.5px solid transparent;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.hireMeButton:hover {
+    color: #a993fe;
+    background: #000;
+    outline: 1.5px solid #a993fe;
+}
+
+.menuButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.4rem;
+    color: #fff;
+    background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
+    line-height: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: none;
+}
+
+.menuButton:hover {
+    color: #a993fe;
+    background: #000;
+    border: 1px solid #a993fe;
+}
+
+@media(max-width: 769px) {
+    .menuButton {
+        display: block;
+    }
+
+    .navList {
+        display: none;
+    }
+}

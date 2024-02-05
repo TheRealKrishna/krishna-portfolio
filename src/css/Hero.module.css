@@ -1,0 +1,265 @@
+.heroContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.heroContainer::after,
+.heroContainer::before {
+    content: " ";
+    width: 28.125rem;
+    height: 28.125rem;
+    border-radius: 28.125rem;
+    background: #7c66e3;
+    position: absolute;
+    z-index: -1;
+    filter: blur(225px);
+}
+
+.heroContainer::after {
+    top: -3rem;
+    left: -5rem;
+
+}
+
+.heroContainer::before {
+    bottom: 2rem;
+    right: -5rem;
+
+}
+
+.heroContent {
+    flex: 1;
+}
+
+.heroContent h3 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 5rem;
+    margin-inline: 5px;
+    position: relative;
+    animation: animatetop 2s;
+}
+
+.heroContent h2 {
+    font-size: 3.8rem;
+    font-weight: 600;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+    margin-inline: 5px;
+    position: relative;
+    animation: animateleft 2s;
+}
+
+.heroContent p {
+    width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-inline: 5px;
+}
+
+.heroImage {
+    width: 400px;
+    border-radius: 30px;
+    position:relative;
+    animation: animateright 2s;
+}
+
+.heroImg {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.heroImg>div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.techIcon {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.65rem;
+    border: 1.5px solid #6852ba;
+    margin: 30px 10px;
+    animation: animatezoom 2s;
+}
+
+.techIconImage {
+    width: 3rem;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.heroImage:hover,
+.techIcon:hover .techIconImage {
+    transform: translateY(-0.5rem);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+
+@media (max-width:1025px) {
+    .heroContent h2 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    .heroContent p {
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+
+    .heroImage {
+        width: 20rem;
+    }
+
+    .techIcon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .techIconImage {
+        width: 2.5rem;
+    }
+}
+
+@media (max-width:768px) {
+    .heroContainer {
+        flex-direction: column;
+    }
+
+    .heroImg {
+        margin: 2rem 0 2rem 0;
+    }
+
+    .heroContainer h2 {
+        margin-top: 3rem;
+    }
+
+    .heroContent h2,
+    .heroContent p {
+        width: auto;
+        text-align: center;
+    }
+
+    .heroContainer::after,
+    .heroContainer::before {
+        content: " ";
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .heroContainer::after {
+        top: 0rem;
+        left: 0rem;
+    }
+
+    .heroContainer::before {
+        bottom: 2rem;
+        right: 0rem;
+    }
+}
+
+@media (max-width:600px) {
+    .heroContent h2 {
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+
+    .heroContent p {
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+    }
+
+    .heroImg {
+        gap: 1rem;
+    }
+
+    .heroImg>div {
+        gap: 1rem;
+    }
+
+    .heroImage {
+        width: 16rem;
+    }
+
+    .techIcon {
+        width: 3.3rem;
+        height: 3.3rem;
+    }
+
+    .techIconImage {
+        width: 2rem;
+    }
+}
+
+@media (max-width:350px) {
+    .heroImage {
+        width: 12rem;
+    }
+}
