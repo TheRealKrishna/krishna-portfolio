@@ -24,18 +24,22 @@ export default function Hero() {
                             strings: ['Web Developer', 'MERN Stack Developer', 'Programmer', 'Software Engineer', 'Full Stack Developer', 'React Developer'],
                             autoStart: true,
                             loop: true,
+                            random: true,
                         }} />
                 </div>
                 <p>
                     Passionate Full Stack Developer | Transforming Ideas into Seamless and Visually Stunning Web Solutions
                 </p>
                 <div className={Styles.socialIconsContainer}>
-                    <img className={Styles.socialIconsImage} src={linkedinIcon} alt="linkedinIcon" />
-                    <img className={Styles.socialIconsImage} src={leetcodeIcon} alt="leetcodeIcon" />
-                    <img className={Styles.socialIconsImage} src={githubIcon} alt="githubIcon" />
-                    <img className={Styles.socialIconsImage} src={geeksforgeeksIcon} alt="geeksforgeeksIcon" />
+                    <a href="https://www.linkedin.com/in/therealkrishna/" target="_blank" rel='noreferrer'><img className={Styles.socialIconsImage} src={linkedinIcon} alt="linkedinIcon" /></a>
+                    <a href="https://leetcode.com/TheRealKrishna/" target="_blank" rel='noreferrer'><img className={Styles.socialIconsImage} src={leetcodeIcon} alt="leetcodeIcon" /></a>
+                    <a href="https://github.com/TheRealKrishna/" target="_blank" rel='noreferrer'><img className={Styles.socialIconsImage} src={githubIcon} alt="githubIcon" /></a>
+                    <a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel='noreferrer'><img className={Styles.socialIconsImage} src={geeksforgeeksIcon} alt="geeksforgeeksIcon" /></a>
                 </div>
-                <ParticlesBackground/>
+                <div className={Styles.resumeDownloadContainer}>
+                    <button className={Styles.resumeDownloadButton} onClick={()=>window.open('/download/resume.pdf')}>Download Resume</button>
+                </div>
+                <ParticlesBackground />
             </div>
             <div className={Styles.heroImg}>
                 <div>
@@ -46,7 +50,7 @@ export default function Hero() {
                 </div>
                 <div>
                     <div className={Styles.techIcon}>
-                        <img src={HTMLImage} className={Styles.techIconImage} alt="HTMLImage" />
+                        <img src={HTMLImage} className={Styles.techIconImage}alt="HTMLImage" />
                     </div>
                     <div className={Styles.techIcon}>
                         <img src={CSSImage} className={Styles.techIconImage} alt="CSSImage" />

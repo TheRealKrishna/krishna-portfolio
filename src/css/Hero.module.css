@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: 4rem;
 }
 
 
@@ -80,7 +81,7 @@
     position: relative;
     animation: animatebottom 2s;
     white-space: nowrap;
-    color:#7e61e7;
+    color: #7e61e7;
 }
 
 .heroContent p {
@@ -94,24 +95,58 @@
     animation: animatebottom 2s;
 }
 
-.socialIconsContainer{
+.socialIconsContainer {
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
     cursor: pointer;
 }
 
-.socialIconsImage{
-    width: 3em;
-    height: 3rem;
+.socialIconsImage {
+    width: 3.3em;
+    position: relative;
+    animation: animatebottom 2s;
+    border: 3px solid #7e61e7;
+    border-radius: 50%;
+    padding: 8px;
+    -webkit-filter: drop-shadow(0px 0px 15px #7e61e7);
+    filter: drop-shadow(0px 0px 50px #7e61e7);
+}
+
+.socialIconsImage:hover {
+    /* transform: translateY(-0.5rem);
+    transition: all .3s ease; */
+    background: #4b009b
+}
+
+.resumeDownloadContainer{
+    margin-top: 1.5rem;
+    display: flex;
+}
+
+.resumeDownloadButton{
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
+    padding: 0.6rem 2rem;
+    border: none;
+    outline: 1.5px solid transparent;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3 ease;
     position: relative;
     animation: animatebottom 2s;
 }
 
-.socialIconsImage:hover{
-    /* transform: translateY(-15px); */
-    transform: translateY(-0.5rem);
-    transition: all .3s ease;
+.resumeDownloadButton:hover {
+    color: #a993fe;
+    background: #000;
+    outline: 1.5px solid #a993fe;
 }
 
 .heroImage {
@@ -209,7 +244,8 @@
 @keyframes animateright {
     from {
         right: -300px;
-        opacity: 1; /* Should Be 0 */
+        opacity: 1;
+        /* Should Be 0 */
     }
 
     to {
@@ -230,14 +266,26 @@
 
 
 @media (max-width:1025px) {
+    .heroContent h3 {
+        font-size: 2.4rem;
+    }
+
     .heroContent h2 {
-        font-size: 3rem;
+        font-size: 2.9rem;
         line-height: 4rem;
     }
 
     .heroContent p {
         font-size: 0.9rem;
         line-height: 1.6rem;
+    }
+
+    .typeWriterContainer>span {
+        font-size: 1.4rem;
+    }
+
+    .typeWriterContainer>div>span {
+        font-size: 1.6rem;
     }
 
     .heroImage {
@@ -254,16 +302,36 @@
     }
 }
 
+@media (max-width:900px) {
+    .heroContent h3 {
+        font-size: 1.8rem;
+    }
+
+    .heroContent h2 {
+        font-size: 2.1rem;
+        line-height: 4rem;
+    }
+
+    .typeWriterContainer>span {
+        font-size: 1rem;
+    }
+
+    .typeWriterContainer>div>span {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width:768px) {
     .heroContainer {
         flex-direction: column;
+        margin-top: 0px;
     }
 
     .heroImg {
         margin: 2rem 0 2rem 0;
     }
 
-    .heroContainer h3{
+    .heroContainer h3 {
         margin-top: 2rem !important;
         font-size: 2rem;
     }
@@ -272,16 +340,16 @@
         font-size: 2.2rem;
     }
 
-    .typeWriterContainer{
-        justify-content: center;
-    }
-
     .typeWriterContainer>span {
         font-size: 1.2rem;
     }
 
     .typeWriterContainer>div>span {
         font-size: 1.4rem;
+    }
+
+    .typeWriterContainer, .socialIconsContainer, .resumeDownloadContainer {
+        justify-content: center;
     }
 
     .heroContent h2,
