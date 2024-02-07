@@ -17,7 +17,8 @@ export default function Navbar() {
                     <div className={Styles.navLogoContainer}><img className={Styles.navLogo} src={logo} alt="Logo" /></div>
                     <div></div>
                     <ul className={Styles.navList}>
-                        <li><a className={Styles.navListItem} href="#hero">Home</a></li>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                        <li><a className={Styles.navListItem} href="#">Home</a></li>
                         <li><a className={Styles.navListItem} href="#skills">Skills</a></li>
                         <li><a className={Styles.navListItem} href="#projects">Projects</a></li>
                         <li><a className={Styles.navListItem} href="#contact-me">Contact Me</a></li>
