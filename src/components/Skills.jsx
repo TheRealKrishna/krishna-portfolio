@@ -1,0 +1,48 @@
+import React, { useEffect, useRef, useState } from 'react'
+import Styles from "../css/Skills.module.css"
+import { SKILLS } from "./utils/data"
+import SkillsCard from './SkillsCard'
+import SkillsInfoCard from './SkillsInfoCard';
+
+export default function Skills({ isInView }) {
+    const [selectedSkill, setSelectedSkill] = useState(SKILLS[0]);
+    const skills = useRef()
+    const skillsInfo = useRef()
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            isInView(skills, Styles)
+            isInView(skillsInfo, Styles)
+        });
+        return () => {
+            window.removeEventListener('scroll', () => {
+                isInView(skills, Styles)
+                isInView(skillsInfo, Styles)
+            });
+        };
+    }, []);
+    return (
+        <section className={Styles.skillsContainer} id='skills'>
+            <h5>Technical Proficiency</h5>
+            <div className={Styles.skillsContent}>
+                <div className={Styles.skills} ref={skills}>
+                    {SKILLS.map((item) => (
+                        <SkillsCard
+                            key={item.title}
+                            iconUrl={item.icon}
+                            title={item.title}
+                            isActive={selectedSkill.title === item.title}
+                            onClick={() => setSelectedSkill(item)}
+                        />
+                    ))
+                    }
+                </div>
+                <div className={Styles.skillsInfo} ref={skillsInfo}>
+                    <SkillsInfoCard
+                        heading={selectedSkill.title}
+                        skills={selectedSkill.skills} />
+                </div>
+            </div>
+        </section>
+    )
+}

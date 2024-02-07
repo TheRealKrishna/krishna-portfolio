@@ -1,0 +1,203 @@
+.skillsContainer {
+    margin-top: 5rem;
+    padding-top: 8rem;
+    position: relative;
+}
+
+.skillsContainer::after,
+.skillsContainer::before {
+    content: " ";
+    width: 28rem;
+    height: 28rem;
+    border-radius: 28.125rem;
+    background: #7c66e3;
+    position: absolute;
+    z-index: -1;
+    filter: blur(250px);
+}
+
+.skillsContainer::after {
+    top: -3rem;
+    left: -5rem;
+}
+
+.skillsContainer::before {
+    background: #9e51b9;
+    bottom: 0rem;
+    right: 0rem;
+}
+
+.skillsContainer>h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3.5rem;
+}
+
+.skillsContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.skills {
+    flex: 1;
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    opacity: 0;
+}
+
+.skills.inView {
+    animation: animateleft 2s;
+    opacity: 1;
+}
+
+.skillsInfo {
+    flex: 1;
+    position: relative;
+    opacity: 0;
+}
+
+.skillsInfo.inView {
+    animation: animateright 2s;
+    opacity: 1;
+}
+
+@media (max-width: 1025px) {
+    .skills {
+        padding-left: 1rem;
+    }
+
+    .skills,
+    .skillsContent {
+        grid-gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skillsContainer {
+        margin-top: 0rem;
+        padding-top: 8rem !important;
+    }
+
+    .skillsContent {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .skills,
+    .skillsInfo {
+        width: 100%;
+    }
+
+    .skillsContainer>h5 {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .skillsContainer::after,
+    .skillsContainer::before {
+        width: 18rem;
+        height: 18rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .skillsContainer {
+        padding: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .skills {
+        padding-left: 0px;
+    }
+
+    .skills,
+    .skillsContent {
+        grid-gap: 1.5rem;
+    }
+}
+
+
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        top: 300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animaterightnofade {
+    from {
+        right: -300px;
+        opacity: 1;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}

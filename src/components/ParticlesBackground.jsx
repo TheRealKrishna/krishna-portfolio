@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import Styles from "../css/ParticlesBackground.module.css"
 
 export default function ParticlesBackground() {
     const [init, setInit] = useState(false);
@@ -16,6 +17,7 @@ export default function ParticlesBackground() {
     return (
         <>
             {init && <Particles
+            className={Styles.tsParticles}
                 id="tsparticles"
                 options={{
                     background: {
@@ -28,7 +30,7 @@ export default function ParticlesBackground() {
                         events: {
                             onClick: {
                                 enable: true,
-                                mode: "push",
+                                mode: "repulse",
                             },
                             onHover: {
                                 enable: true,
@@ -64,7 +66,7 @@ export default function ParticlesBackground() {
                                 default: "bounce",
                             },
                             random: false,
-                            speed: 6,
+                            speed: 2,
                             straight: false,
                         },
                         number: {
