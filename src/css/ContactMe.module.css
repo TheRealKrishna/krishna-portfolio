@@ -1,0 +1,154 @@
+.contactContainer {
+    margin: 4rem 0;
+    position: relative;
+}
+
+.contactContainer::after,
+.contactContainer::before {
+    content: " ";
+    width: 28rem;
+    height: 28rem;
+    border-radius: 28.125rem;
+    background: #9e51b9;
+    position: absolute;
+    z-index: -1;
+    filter: blur(250px);
+}
+
+.contactContainer::after {
+    top: -3rem;
+    left: -10rem;
+}
+
+.contactContainer::before {
+    background: #7c66e3;
+    bottom: 0rem;
+    right: 5rem;
+}
+
+
+.contactContainer h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+
+}
+
+.contactContent {
+    display: flex;
+    gap: 3rem;
+}
+
+.contactInfoCard{
+    flex: 1;
+    opacity:0;
+}
+
+.contactInfoCard.inView{
+    position: relative;
+    animation: animateleft 2s;
+    opacity:1;
+}
+
+.contactForm{
+    flex: 1;
+    opacity:0;
+}
+
+.contactForm.inView{
+    position: relative;
+    animation: animateright 2s;
+    opacity:1;
+}
+
+@media (max-width: 768px) {
+    .contactContent {
+        flex-direction: column-reverse;
+    }
+
+    .contactContainer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        top: 300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animaterightnofade {
+    from {
+        right: -300px;
+        opacity: 1;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}

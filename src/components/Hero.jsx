@@ -1,6 +1,7 @@
 import React from 'react'
 import Styles from "../css/Hero.module.css"
 import HeroImage from "../assets/Hero.gif"
+import NodeJSImage from "../assets/NodeJS.png"
 import HTMLImage from "../assets/html.png"
 import CSSImage from "../assets/css.png"
 import JSImage from "../assets/js.png"
@@ -49,6 +50,9 @@ export default function Hero() {
                     <img src={HeroImage} className={Styles.heroImage} alt="HeroImage" />
                 </div>
                 <div>
+                    <div className={Styles.techIcon}>
+                        <img src={NodeJSImage} className={Styles.techIconImage}alt="HTMLImage" />
+                    </div>
                     <div className={Styles.techIcon}>
                         <img src={HTMLImage} className={Styles.techIconImage}alt="HTMLImage" />
                     </div>

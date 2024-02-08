@@ -19,6 +19,7 @@
 .skillsCard > span {
     font-size: 1.3rem;
     font-weight: 500;
+    white-space: nowrap;;
 }
 
 .skillIcon {
