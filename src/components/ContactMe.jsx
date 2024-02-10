@@ -20,11 +20,12 @@ export default function ContactMe({isInView}) {
                 isInView(contactForm, Styles)
             });
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <section className={Styles.contactContainer} id='contact-me'>
-            <h5>Contact Me</h5>
+            <h5>Get In Touch</h5>
             <div className={Styles.contactContent}>
                 <div className={Styles.contactInfoCard} ref={contactInfoCard}>
                     <ContactInfoCard

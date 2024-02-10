@@ -3,19 +3,27 @@ const cors = require("cors");
 const app = express()
 const port = 80
 const nodemailer = require("nodemailer")
+require('dotenv').config()
+const axios = require('axios');
 
 app.use(express.json())
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('backend for Krishna Portfolio')
 })
 
-app.use("/contact", async (req, res) => {
+app.use("/api/contact", async (req, res) => {
     try {
+        const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}`)
+        if (!captchaResponse.data.success) {
+            return res.status(409).json({ success: false, error: "Invalid Captcha Response!" })
+        }
+
         const transport = nodemailer.createTransport({
             host: process.env.node_mailer_url,
             port: 465,
+            secure: true,
             auth: {
                 user: process.env.node_mailer_username,
                 pass: process.env.node_mailer_password
@@ -26,18 +34,14 @@ app.use("/contact", async (req, res) => {
             replyTo: req.body.email,
             to: "contact@krishna.lol",
             subject: "Contact From Krishna Agarwal - Portfolio",
-            html: `<p>From ${req.body.firstName} ${req.body.lastName},<br>${req.body.message}</p>`
+            html: `From ${req.body.firstName} ${req.body.lastName},<br>${req.body.message}`
         }
-        transport.sendMail(message, (error) => {
-            if (error) {
-                return res.json({success: false})
-            }
-        });
+        transport.sendMail(message);
         return res.json({ success: true })
     }
     catch (error) {
         console.error(error.message)
-        return res.status(500).json({ success:false, error: "Internal Server Error Occured!" })
+        return res.status(500).json({ success: false, error: "Internal Server Error Occured!" })
     }
 })
 

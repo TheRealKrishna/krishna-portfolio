@@ -1,5 +1,6 @@
 .contactContainer {
-    margin: 4rem 0;
+    margin-top: 0rem;
+    padding-top: 8rem;
     position: relative;
 }
 
@@ -61,7 +62,12 @@
     opacity:1;
 }
 
+
 @media (max-width: 768px) {
+    .contactContainer{
+        padding-top: 6rem;
+    }
+
     .contactContent {
         flex-direction: column-reverse;
     }
@@ -71,6 +77,7 @@
         margin-bottom: 3rem;
     }
 }
+
 
 
 @keyframes animatezoom {

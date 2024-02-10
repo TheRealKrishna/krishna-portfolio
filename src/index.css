@@ -24,3 +24,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 50px;
 }
 
+.grecaptcha-badge { 
+  visibility: hidden !important;
+}

@@ -1,6 +1,5 @@
 .projectsContainer {
     margin-top: 5rem;
-    margin-bottom: 10rem;
     padding-top: 8rem;
     position: relative;
 }
@@ -44,6 +43,9 @@
 
 
 @media (max-width:768px) {
+    .projectsContainer{
+        padding-top: 6rem;
+    }
     .projectsContainer>h5 {
         font-size: 1.3rem;
     }

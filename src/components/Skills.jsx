@@ -20,6 +20,7 @@ export default function Skills({ isInView }) {
                 isInView(skillsInfo, Styles)
             });
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <section className={Styles.skillsContainer} id='skills'>

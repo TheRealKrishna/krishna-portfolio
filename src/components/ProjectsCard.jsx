@@ -15,6 +15,7 @@ export default function ProjectsCard({ details, isInView }) {
                 isInView(projectsCard, Styles)
             });
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

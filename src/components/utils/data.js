@@ -42,27 +42,6 @@ export const PROJECTS = [
         }
     },
     {
-        title: "Ecommerce Website",
-        tools: {
-            "NEXT JS": {
-                background: "linear-gradient(to top, white, #717171)",
-                WebkitTextFillColor: "transparent",
-                WebkitBackgroundClip: "text",
-            },
-            "MONGO DB": {
-                background: "linear-gradient(to top, rgb(26 255 0), rgb(255 255 255))",
-                WebkitTextFillColor: "transparent",
-                WebkitBackgroundClip: "text",
-            }
-        },
-        logo: amazonLogo,
-        description: "My ecommerce site FakeStore, built with NEXTJS and MongoDB, mirrors the seamless shopping experience of Amazon. Users navigate a dynamic interface, browsing through a diverse array of products. Robust MongoDB integration ensures smooth transactions and secure data handling. It's a modern, user-centric platform, combining the best of NEXTJS's efficiency with MongoDB's reliability for a shopping experience akin to industry giants.",
-        links:{
-            demo:"https://fakestore.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/fake-store"
-        }
-    },
-    {
         title: "Notes Application",
         tools: {
             "REACT": {
@@ -143,6 +122,27 @@ export const PROJECTS = [
         links:{
             demo:"https://newsmonkey.krishna.lol/",
             code:"https://github.com/TheRealKrishna/newsmonkey"
+        }
+    },
+    {
+        title: "Ecommerce Website",
+        tools: {
+            "NEXT JS": {
+                background: "linear-gradient(to top, white, #717171)",
+                WebkitTextFillColor: "transparent",
+                WebkitBackgroundClip: "text",
+            },
+            "MONGO DB": {
+                background: "linear-gradient(to top, rgb(26 255 0), rgb(255 255 255))",
+                WebkitTextFillColor: "transparent",
+                WebkitBackgroundClip: "text",
+            }
+        },
+        logo: amazonLogo,
+        description: "My ecommerce site FakeStore, built with NEXTJS and MongoDB, mirrors the seamless shopping experience of Amazon. Users navigate a dynamic interface, browsing through a diverse array of products. Robust MongoDB integration ensures smooth transactions and secure data handling. It's a modern, user-centric platform, combining the best of NEXTJS's efficiency with MongoDB's reliability for a shopping experience akin to industry giants.",
+        links:{
+            demo:"https://fakestore.krishna.lol/",
+            code:"https://github.com/TheRealKrishna/fake-store"
         }
     },
     {

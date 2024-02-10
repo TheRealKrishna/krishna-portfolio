@@ -11,8 +11,13 @@
 }
 
 .projectsLogo {
-    width: 100%;
-    height: 160px;
+    width:  100%;
+    display: flex;
+    justify-content: center;
+}
+
+.projectsLogo > div{
+    width: 125px !important;
 }
 
 .projectsCard h5 {

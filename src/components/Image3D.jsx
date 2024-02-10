@@ -18,6 +18,7 @@ export default function Image3D({ image }) {
 
     function Logo3D() {
         const [decal] = useTexture([image]);
+        // eslint-disable-next-line no-unused-vars
         const [position, setPosition] = useState([0, 0, 0.05])
         return (
             <>

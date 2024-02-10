@@ -22,7 +22,7 @@ export default function Navbar() {
                         <li><a className={Styles.navListItem} href="#skills">Skills</a></li>
                         <li><a className={Styles.navListItem} href="#projects">Projects</a></li>
                         <li><a className={Styles.navListItem} href="#contact-me">Contact Me</a></li>
-                        <li ><button className={Styles.hireMeButton}>Hire Me</button></li>
+                        <li ><button className={Styles.hireMeButton} onClick={()=>window.open("https://www.linkedin.com/in/therealkrishna/")}>Hire Me</button></li>
                     </ul>
                     <button className={Styles.menuButton} onClick={toggleMenu}>
                         <span className={"material-symbols-outlined"} style={{ fontSize: "1.4rem" }}>{isMenuOpen ? <FaXmark /> : <FaBars />}</span>
