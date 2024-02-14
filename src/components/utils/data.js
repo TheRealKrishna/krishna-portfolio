@@ -111,7 +111,7 @@ export const PROJECTS = [
                 WebkitTextFillColor: "transparent",
                 WebkitBackgroundClip: "text",
             },
-            "News API": {
+            "NEWS API": {
                 background: "linear-gradient(to top, rgb(163 0 0), rgb(255 47 47))",
                 WebkitTextFillColor: "transparent",
                 WebkitBackgroundClip: "text",
@@ -153,7 +153,7 @@ export const PROJECTS = [
                 WebkitTextFillColor: "transparent",
                 WebkitBackgroundClip: "text",
             },
-            "Three JS": {
+            "THREE JS": {
                 background: "linear-gradient(to top, rgb(255 0 0), rgb(255 0 200))",
                 WebkitTextFillColor: "transparent",
                 WebkitBackgroundClip: "text",
