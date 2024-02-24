@@ -54,11 +54,11 @@ export default function ContactForm() {
             <div className={Styles.contactFormContent}>
                 <form onSubmit={onFormSubmit} className={Styles.contactForm}>
                     <div className={Styles.nameContainer}>
-                        <input type="text" name="firstName" onChange={onChange} value={mailInfo.firstName} placeholder="First Name" />
-                        <input type="text" name="lastName" onChange={onChange} value={mailInfo.lastName} placeholder="Last Name" />
+                        <input required type="text" name="firstName" onChange={onChange} value={mailInfo.firstName} placeholder="First Name" />
+                        <input required type="text" name="lastName" onChange={onChange} value={mailInfo.lastName} placeholder="Last Name" />
                     </div>
-                    <input type="text" name="email" onChange={onChange} value={mailInfo.email} placeholder="Email" />
-                    <textarea type="text" name="message" onChange={onChange} value={mailInfo.message} placeholder="Message" rows={3} />
+                    <input required type="email" name="email" onChange={onChange} value={mailInfo.email} placeholder="Email" />
+                    <textarea required type="text" name="message" onChange={onChange} value={mailInfo.message} placeholder="Message" rows={3} />
                     <button type='submit'>SEND</button>
                     <ReCAPTCHA
                         ref={recaptchaRef}
