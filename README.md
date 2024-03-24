@@ -45,12 +45,12 @@
 </code></div></div></pre>
   </li>
   <li>
-    <p>Set up backend environment variables by creating a <code>.env</code> file inside the <code>api</code> directory
-      and add the necessary variables mentioned above.</p>
+    <p>Set up frontend environment variables by creating a <code>.env</code> file inside the
+      <code>krishna-portfolio</code> directory and add the necessary frontend variables mentioned above.</p>
   </li>
   <li>
-    <p>Set up frontend environment variables by creating a <code>.env</code> file inside the
-      <code>krishna-portfolio</code> directory and add the necessary variables mentioned above.</p>
+    <p>Set up backend environment variables by creating a <code>.env</code> file inside the <code>krishna-portfolio/api</code> directory
+      and add the necessary backend variables mentioned above.</p>
   </li>
   <li>
     <p>Install dependencies for both frontend and backend:</p>
