@@ -36,9 +36,9 @@ export const PROJECTS = [
         },
         logo: xLogo,
         description: "My project is a comprehensive Twitter clone developed using React, Node.js, Express, and MongoDB. Mimicking the core features of Twitter, users can register accounts, compose tweets, manage individual profiles, follow other users, engage with tweets through likes, message each other in realtime. The platform boasts a responsive design and real-time updates, delivering an authentic Twitter experience within a custom framework.",
-        links:{
-            demo:"https://x.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/x.com-clone"
+        links: {
+            demo: "https://x.krishna.lol/",
+            code: "https://github.com/TheRealKrishna/x.com-clone"
         }
     },
     {
@@ -67,9 +67,9 @@ export const PROJECTS = [
         },
         logo: inotebookLogo,
         description: "My note taking app iNoteBook which offers seamless organization and retrieval of notes is built with React, Node.js, Express, and MongoDB, it provides a user-friendly interface for creating, editing, and categorizing notes. Users can securely store their thoughts, ideas, and reminders while accessing them from any device. With backend support and intuitive frontend design, it ensures efficient note management for enhanced productivity.",
-        links:{
-            demo:"https://inotebook.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/inotebook"
+        links: {
+            demo: "https://inotebook.krishna.lol/",
+            code: "https://github.com/TheRealKrishna/inotebook"
         }
     },
     {
@@ -98,9 +98,9 @@ export const PROJECTS = [
         },
         logo: gigachatLogo,
         description: "Presenting my Chat Application GigaChat crafted with React, Node.js, WebSocket, and MongoDB. Engage in real-time conversations with friends and colleagues effortlessly. Seamlessly send messages and connect with others in a dynamic and responsive interface. Backed by MongoDB for efficient data management, this application ensures secure and seamless communication. Experience the power of instant messaging with this feature-rich chat platform.",
-        links:{
-            demo:"https://gigachat.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/giga-chat"
+        links: {
+            demo: "https://gigachat.krishna.lol/",
+            code: "https://github.com/TheRealKrishna/giga-chat"
         }
     },
     {
@@ -119,9 +119,9 @@ export const PROJECTS = [
         },
         logo: newsmonkeyLogo,
         description: "Introducing my News Website NewsMonkey developed with React and powered by the News API. Stay informed and up-to-date with the latest headlines and breaking news from around the globe. Explore diverse categories, from politics to technology, with a sleek and intuitive user interface. Seamlessly navigate through articles and experience the convenience of accessing comprehensive news coverage all in one place with this dynamic and engaging platform.",
-        links:{
-            demo:"https://newsmonkey.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/newsmonkey"
+        links: {
+            demo: "https://newsmonkey.krishna.lol/",
+            code: "https://github.com/TheRealKrishna/newsmonkey"
         }
     },
     {
@@ -140,9 +140,9 @@ export const PROJECTS = [
         },
         logo: amazonLogo,
         description: "My ecommerce site FakeStore, built with NEXTJS and MongoDB, mirrors the seamless shopping experience of Amazon. Users navigate a dynamic interface, browsing through a diverse array of products. Robust MongoDB integration ensures smooth transactions and secure data handling. It's a modern, user-centric platform, combining the best of NEXTJS's efficiency with MongoDB's reliability for a shopping experience akin to industry giants.",
-        links:{
-            demo:"https://fakestore.krishna.lol/",
-            code:"https://github.com/TheRealKrishna/fake-store"
+        links: {
+            demo: "https://fakestore.krishna.lol/",
+            code: "https://github.com/TheRealKrishna/fake-store"
         }
     },
     {
@@ -171,9 +171,9 @@ export const PROJECTS = [
         },
         logo: portfolioLogo,
         description: "My Personal Portfolio, crafted with React, Three.js, Node.js, and Express. Explore a showcase of my projects, skills, and insights about me. Engage with dynamic Three.js visualizations, showcasing my creative prowess. Discover my diverse skill set and past projects, each reflecting my passion and expertise. Connect with me effortlessly through the contact form, enabling seamless communication and collaboration opportunities.",
-        links:{
-            demo:"https://krishna.lol/",
-            code:"https://github.com/TheRealKrishna/krishna-portfolio"
+        links: {
+            demo: "https://krishna.lol/",
+            code: "https://github.com/TheRealKrishna/krishna-portfolio"
         }
     }
 ]
@@ -184,19 +184,21 @@ export const SKILLS = [
         icon: frontendIcon,
         skills: [
             { skill: "HTML5", percentage: "100%" },
-            { skill: "CSS3", percentage: "85%" },
+            { skill: "CSS3", percentage: "90%" },
             { skill: "JavaScript", percentage: "95%" },
-            { skill: "React.js", percentage: "90%" },
+            { skill: "React.js", percentage: "95%" },
+            { skill: "Next.js", percentage: "90%" },
         ],
     },
     {
         title: "Backend",
         icon: backendIcon,
         skills: [
-            { skill: "Node.js", percentage: "98%" },
-            { skill: "Express.js", percentage: "94%" },
-            { skill: "MongoDB", percentage: "92%" },
-            { skill: "PHP & SQL", percentage: "60%" },
+            { skill: "Node.js & Express.js", percentage: "98%" },
+            { skill: "MongoDB", percentage: "97%" },
+            { skill: "MySQL", percentage: "92%" },
+            { skill: "GraphQL", percentage: "95%" },
+            { skill: "Web Socket", percentage: "85%" },
         ],
     },
     {
@@ -204,9 +206,10 @@ export const SKILLS = [
         icon: toolsIcon,
         skills: [
             { skill: "Visual Studio Code", percentage: "98%" },
-            { skill: "Git & Github", percentage: "85%" },
-            { skill: "Chat GPT & Other AI tools", percentage: "97%" },
             { skill: "CPanel And Web Hosting", percentage: "98%" },
+            { skill: "Git & Github", percentage: "92%" },
+            { skill: "Chat GPT & Other AI tools", percentage: "97%" },
+            { skill: "Microsoft Apps(Excel, etc...)", percentage: "90%" },
         ],
     },
     {
@@ -216,6 +219,7 @@ export const SKILLS = [
             { skill: "Problem Solving", percentage: "98%" },
             { skill: "Team Co-ordination", percentage: "95%" },
             { skill: "Attention To Detail", percentage: "96%" },
+            { skill: "Adapatation & Learning", percentage: "100%" },
             { skill: "Communication Skill", percentage: "90%" },
         ],
     },

@@ -3,7 +3,7 @@ import Styles from "../css/MobileNavbar.module.css"
 import logo from "../assets/logo.png"
 
 export default function MobileNavbar({ isMenuOpen, toggleMenu }) {
-  return (  
+  return (
     <>
       <div className={`${Styles.mobileMenuOverlay} ${isMenuOpen ? Styles.active : ""}`}></div>
       <div className={`${Styles.mobileMenu} ${isMenuOpen ? Styles.active : ""}`} onClick={toggleMenu}>
@@ -15,7 +15,7 @@ export default function MobileNavbar({ isMenuOpen, toggleMenu }) {
             <li><a className={Styles.navListItem} href="#skills">Skills</a></li>
             <li><a className={Styles.navListItem} href="#projects">Projects</a></li>
             <li><a className={Styles.navListItem} href="#contact-me">Contact Me</a></li>
-            <li ><button className={Styles.hireMeButton} onClick={()=>window.open("https://www.linkedin.com/in/therealkrishna/")}>Hire Me</button></li>
+            <li ><button className={Styles.hireMeButton} onClick={() => window.open("https://www.linkedin.com/in/therealkrishna/")}>Hire Me</button></li>
           </ul>
         </div>
       </div>

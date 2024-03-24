@@ -10,7 +10,7 @@ export default function SkillsInfoCard({ heading, skills }) {
                     <React.Fragment key={`skill_${index}`}>
                         <div className={Styles.skillInfo}>
                             <p>{item.skill}</p>
-                            <p className="percentage">{item.percentage}</p>
+                            {/* <p className="percentage">{item.percentage}</p> */}
                         </div>
 
                         <div className={Styles.skillProgressBg}>
