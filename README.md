@@ -21,7 +21,6 @@
     <h2>Project Structure</h2>
 
     <pre>
-- /
   - client/            # React frontend
   - api/               # Backend Node.js
     </pre>
