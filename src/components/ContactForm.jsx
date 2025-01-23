@@ -19,12 +19,10 @@ export default function ContactForm() {
             new Promise(async (resolve, reject) => {
                 const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    mode: "cors",
+                    mode: "same-origin",
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
-                });
+                })
                 const json = await response.json();
                 if (json.success) {
                     setMailInfo({ firstName: "", lastName: "", email: "", message: "" })
