@@ -21,8 +21,8 @@ export default function ContactForm() {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Credentials": true,
+                        "access-control-allow-origin": "https://krishna.codes",
+                        "access-control-allow-credentials": true,
                     },
                     mode: "cors",
                     body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
