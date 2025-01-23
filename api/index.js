@@ -7,7 +7,7 @@ require('dotenv').config()
 const axios = require('axios');
 
 app.use(express.json())
-app.use(cors())
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('backend for Krishna Portfolio')
