@@ -18,12 +18,11 @@ export default function ContactForm() {
         toast.promise(
             new Promise(async (resolve, reject) => {
                 try {
-                    var user_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
                     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
                         method: "POST",
                         mode: "no-cors",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ ...mailInfo, reCaptchaToken, user_ip }),
+                        body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
                     })
                     const json = await response.json();
                     if (json.success) {
