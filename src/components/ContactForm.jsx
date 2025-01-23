@@ -36,6 +36,7 @@ export default function ContactForm() {
                 }
                 catch (err) {
                     reject("An Internal Server Error Occurred!");
+                    console.log(err)
                 }
             }),
             {
