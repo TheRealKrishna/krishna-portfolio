@@ -13,24 +13,29 @@ export default function ContactForm() {
     }
 
     const onFormSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const reCaptchaToken = await recaptchaRef.current.executeAsync();
         toast.promise(
             new Promise(async (resolve, reject) => {
-                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
-                    method: "POST",
-                    mode: "same-origin",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
-                })
-                const json = await response.json();
-                if (json.success) {
-                    setMailInfo({ firstName: "", lastName: "", email: "", message: "" })
-                    resolve("Mail Sent, We will get back to you soon.")
-                    setIsMailSent(true)
+                try {
+                    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
+                    })
+                    const json = await response.json();
+                    if (json.success) {
+                        setMailInfo({ firstName: "", lastName: "", email: "", message: "" })
+                        resolve("Mail Sent, We will get back to you soon.")
+                        setIsMailSent(true)
+                    }
+                    else {
+                        reject(json.error)
+                    }
                 }
-                else {
-                    reject(json.error)
+                catch (err) {
+                    reject("An Internal Server Error Occurred!");
                 }
             }),
             {
