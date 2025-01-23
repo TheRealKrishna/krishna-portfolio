@@ -21,7 +21,9 @@ export default function ContactForm() {
                     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
                         method: "POST",
                         mode: "no-cors",
-                        headers: { "Content-Type": "application/json" },
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
                         body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
                     })
                     const json = await response.json();
