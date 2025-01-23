@@ -13,9 +13,8 @@ app.post("/contact", async (req, res) => {
     try {
         const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}`)
         if (!captchaResponse.data.success) {
-            // return res.status(409).json({ success: false, error: "Invalid Captcha Response!" })
+            return res.status(409).json({ success: false, error: "Invalid Captcha Response!" })
         }
-
         const transport = nodemailer.createTransport({
             host: process.env.node_mailer_url,
             port: 465,
@@ -37,7 +36,7 @@ app.post("/contact", async (req, res) => {
     }
     catch (error) {
         console.error(error.message)
-        return res.status(500).json({ success: false, error: "Internal Server Error Occured!" })
+        return res.status(500).json({ success: false, error: "Internal Server Error Occurred!" })
     }
 })
 
