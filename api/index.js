@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post("/contact", async (req, res) => {
     try {
-        const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}`)
+        const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}&remoteip=${user_ip}`)
         if (!captchaResponse.data.success) {
             console.log(captchaResponse)
             return res.status(409).json({ success: false, error: "Invalid Captcha Response!" })
