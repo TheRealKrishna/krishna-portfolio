@@ -9,9 +9,21 @@ const axios = require('axios');
 app.use(express.json())
 app.use(cors());
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://krishna.codes');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+    next();
+});
+
 app.get('/', (req, res) => {
     res.send('backend for Krishna Portfolio')
-})
+});
+
 
 app.use("/contact", async (req, res) => {
     try {
