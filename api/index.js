@@ -13,11 +13,7 @@ app.get('/', (req, res) => {
     res.send('backend for Krishna Portfolio')
 })
 
-app.get('/contact', (req, res) => {
-    res.send('backend for Krishna Portfolio')
-})
-
-app.post("/contact", async (req, res) => {
+app.use("/contact", async (req, res) => {
     try {
         const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}`)
         if (!captchaResponse.data.success) {
