@@ -9,10 +9,14 @@ const axios = require('axios');
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.send('backend for Krishna Portfolio')
+})
+
 app.post("/contact", async (req, res) => {
     try {
         const captchaResponse = await axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.reCaptchaToken}`)
-        if (!captchaResponse.data.success) {
+        if (!captchaResponse.success) {
             return res.status(409).json({ success: false, error: "Invalid Captcha Response!" })
         }
         const transport = nodemailer.createTransport({
