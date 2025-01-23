@@ -7,18 +7,17 @@ require('dotenv').config()
 const axios = require('axios');
 
 app.use(express.json())
-app.use(cors());
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://krishna.codes');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
-    next();
-});
+const corsOptions = {
+    origin: 'https://krishna.codes', // Allow your frontend origin
+    methods: 'GET, POST, OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
+    credentials: true, // Allow cookies and credentials
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
 
 app.get('/', (req, res) => {
     res.send('backend for Krishna Portfolio')

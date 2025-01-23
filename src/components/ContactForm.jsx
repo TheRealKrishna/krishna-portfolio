@@ -21,12 +21,10 @@ export default function ContactForm() {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "access-control-allow-origin": "https://krishna.codes",
-                        "access-control-allow-credentials": true,
                     },
                     mode: "cors",
                     body: JSON.stringify({ ...mailInfo, reCaptchaToken }),
-                })
+                });
                 const json = await response.json();
                 if (json.success) {
                     setMailInfo({ firstName: "", lastName: "", email: "", message: "" })
