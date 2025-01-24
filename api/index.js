@@ -31,7 +31,7 @@ app.post("/contact", async (req, res) => {
         const message = {
             from: process.env.node_mailer_username,
             replyTo: req.body.email,
-            to: "contact@krishna.lol",
+            to: process.env.node_mailer_receiving_email,
             subject: "Contact From Krishna Agarwal - Portfolio",
             html: `From ${req.body.firstName} ${req.body.lastName},<br>${req.body.message}`
         }
