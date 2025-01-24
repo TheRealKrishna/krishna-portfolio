@@ -110,7 +110,7 @@
     border: 1px solid #a993fe;
 }
 
-@media(max-width: 769px) {
+@media(max-width: 1024px) {
     .menuButton {
         display: block;
     }

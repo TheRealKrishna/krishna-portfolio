@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Styles from "../css/Skills.module.css"
-import { SKILLS } from "./utils/data"
+import { SKILLS } from "../utils/Projects"
 import SkillsCard from './SkillsCard'
 import SkillsInfoCard from './SkillsInfoCard';
 

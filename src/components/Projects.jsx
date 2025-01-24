@@ -1,16 +1,16 @@
 import React from 'react'
 import Styles from "../css/Projects.module.css"
 import ProjectsCard from './ProjectsCard'
-import { PROJECTS } from './utils/data'
+import { ProjectsData } from "../utils/Projects"
 
-export default function Projects({isInView}) {
+export default function Projects({ isInView }) {
   return (
     <div>
       <section className={Styles.projectsContainer} id='projects'>
         <h5>My Projects</h5>
         <div className={Styles.projectsContent}>
           {
-            PROJECTS(window.location.host).map((item) => (
+            ProjectsData(window.location.host).map((item) => (
               <ProjectsCard key={item.title} details={item} isInView={isInView} />
             )
             )

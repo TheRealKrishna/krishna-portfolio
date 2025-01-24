@@ -1,0 +1,109 @@
+.paddingX {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+@media (min-width: 640px) {
+  .paddingX {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.paddingY {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+@media (min-width: 640px) {
+  .paddingY {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.padding {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+  .padding {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.heroHeadText {
+  font-weight: 900;
+  color: white;
+  font-size: 40px;
+  line-height: 98px;
+  margin-top: 2px;
+}
+
+@media (min-width: 640px) {
+  .heroHeadText {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroHeadText {
+    font-size: 80px;
+  }
+}
+
+.heroSubText {
+  color: #dfd9ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+@media (min-width: 640px) {
+  .heroSubText {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSubText {
+    font-size: 30px;
+  }
+}
+
+.sectionHeadText {
+  color: white;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+@media (min-width: 640px) {
+  .sectionHeadText {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sectionHeadText {
+    font-size: 60px;
+  }
+}
+
+.sectionSubText {
+  font-size: 14px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: wider;
+}
+
+@media (min-width: 640px) {
+  .sectionSubText {
+    font-size: 18px;
+  }
+}

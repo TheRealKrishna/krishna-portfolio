@@ -1,15 +1,15 @@
-import frontendIcon from "../../assets/frontend.png"
-import backendIcon from "../../assets/backend.png"
-import toolsIcon from "../../assets/tools.png"
-import softSkillsIcon from "../../assets/soft-skills.png"
-import xLogo from "../../assets/x.png"
-import amazonLogo from "../../assets/amazon.png"
-import inotebookLogo from "../../assets/inotebook.png"
-import gigachatLogo from "../../assets/gigachat.png"
-import newsmonkeyLogo from "../../assets/newsmonkey.png"
-import portfolioLogo from "../../assets/Hero.gif"
+import frontendIcon from "../assets/frontend.png"
+import backendIcon from "../assets/backend.png"
+import toolsIcon from "../assets/tools.png"
+import softSkillsIcon from "../assets/soft-skills.png"
+import xLogo from "../assets/x.png"
+import amazonLogo from "../assets/amazon.png"
+import inotebookLogo from "../assets/inotebook.png"
+import gigachatLogo from "../assets/gigachat.png"
+import newsmonkeyLogo from "../assets/newsmonkey.png"
+import portfolioLogo from "../assets/Hero.gif"
 
-export const PROJECTS = (originURL) => [
+export const ProjectsData = (originURL) => [
     {
         title: "Twitter Clone",
         tools: {

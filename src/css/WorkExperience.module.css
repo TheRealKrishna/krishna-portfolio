@@ -1,0 +1,55 @@
+.projectsContainer {
+  margin-top: 5rem;
+  padding-top: 8rem;
+  position: relative;
+}
+
+.projectsContainer::after,
+.projectsContainer::before {
+  content: " ";
+  width: 28rem;
+  height: 28rem;
+  border-radius: 28.125rem;
+  background: #2f00ff;
+  position: absolute;
+  z-index: -1;
+  filter: blur(400px);
+}
+
+.projectsContainer::after {
+  top: 10rem;
+  left: -10rem;
+}
+
+.projectsContainer::before {
+  background: #9e51b9;
+  bottom: 0rem;
+  right: 0rem;
+}
+
+.projectsContainer h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.experiencePointsUl {
+  margin-top: 20px;
+  list-style-type: disc;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@media (max-width: 425px) {
+  .experiencePointsUl {
+    margin-left: 0px;
+  }
+  .experiencePointsUl li {
+    padding-left: 0px !important;
+  }
+  .projectsContainer{
+    width: 90vw;
+  }
+}

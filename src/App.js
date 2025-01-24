@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import ContactMe from './components/ContactMe';
 import { Toaster } from 'react-hot-toast';
+import WorkExperience from './components/WorkExperience';
 
 function App() {
   function isInView(skills, Styles) {
@@ -26,6 +27,7 @@ function App() {
       <div className='container'>
         <Hero isInView={isInView} />
         <Skills isInView={isInView} />
+        <WorkExperience />
         <Projects isInView={isInView} />
         <ContactMe isInView={isInView} />
       </div>
