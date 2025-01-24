@@ -35,7 +35,7 @@ export default function Hero() {
                     <a href="https://www.linkedin.com/in/therealkrishna/" target="_blank" rel='noreferrer'><img title="Linkedin" className={Styles.socialIconsImage} src={linkedinIcon} alt="linkedinIcon" /></a>
                     <a href="https://leetcode.com/TheRealKrishna/" target="_blank" rel='noreferrer'><img title="Leetcode" className={Styles.socialIconsImage} src={leetcodeIcon} alt="leetcodeIcon" /></a>
                     <a href="https://github.com/TheRealKrishna/" target="_blank" rel='noreferrer'><img title="Github" className={Styles.socialIconsImage} src={githubIcon} alt="githubIcon" /></a>
-                    <a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel='noreferrer'><img title="Geelsforgeeks" className={Styles.socialIconsImage} src={geeksforgeeksIcon} alt="geeksforgeeksIcon" /></a>
+                    {/* <a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel='noreferrer'><img title="Geelsforgeeks" className={Styles.socialIconsImage} src={geeksforgeeksIcon} alt="geeksforgeeksIcon" /></a> */}
                 </div>
                 <div className={Styles.resumeDownloadContainer}>
                     <button className={Styles.resumeDownloadButton} onClick={()=>window.open('/download/resume.pdf')}>Download Resume</button>

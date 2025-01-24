@@ -58,7 +58,7 @@ export default function Footer() {
             <li><a href="https://www.linkedin.com/in/therealkrishna/" target="_blank" rel="noreferrer">Linkedin</a></li>
             <li><a href="https://leetcode.com/TheRealKrishna/" target="_blank" rel="noreferrer">Leetcode</a></li>
             <li><a href="https://github.com/TheRealKrishna/" target="_blank" rel="noreferrer">Github</a></li>
-            <li><a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel="noreferrer">GeeksForGeeks</a></li>
+            {/* <li><a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel="noreferrer">GeeksForGeeks</a></li> */}
           </ul>
         </div>
         <div className={Styles.newsletterContainer}>
