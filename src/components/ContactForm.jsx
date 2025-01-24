@@ -20,7 +20,6 @@ export default function ContactForm() {
                 try {
                     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
                         method: "POST",
-                        mode: "no-cors",
                         headers: {
                             "Content-Type": "application/json"
                         },
