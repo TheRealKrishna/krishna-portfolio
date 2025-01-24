@@ -15,7 +15,7 @@ export default function ProjectsCard({ details, isInView }) {
                 isInView(projectsCard, Styles)
             });
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -35,8 +35,8 @@ export default function ProjectsCard({ details, isInView }) {
             </span>
             <p className={Styles.projectsDescription}>{details.description}</p>
             <div className={Styles.projectsLinks}>
-                <button className={Styles.projectsLinksButtons} onClick={() => window.open(details.links.demo)}>Demo</button>
-                <button className={Styles.projectsLinksButtons} onClick={() => window.open(details.links.code)}>Source Code</button>
+                <a href={details.links.demo} target='_blank' rel="noreferrer" className={Styles.projectsLinksButtons}>Demo</a>
+                <a href={details.links.code} target='_blank' rel="noreferrer" className={Styles.projectsLinksButtons}>Source Code</a>
             </div>
         </div>
     )
