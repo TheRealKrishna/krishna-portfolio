@@ -65,7 +65,7 @@ const ExperienceCard = ({ experience }) => {
 const WorkExperience = () => {
   return (
     <div>
-      <section className={Styles.projectsContainer} id='workExperience'>
+      <section className={Styles.experienceContainer} id='workExperience'>
         <motion.div variants={textVariant()}>
           <h5>Work Experience</h5>
         </motion.div>

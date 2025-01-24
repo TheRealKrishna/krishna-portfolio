@@ -1,33 +1,33 @@
-.projectsContainer {
+.experienceContainer {
   margin-top: 5rem;
   padding-top: 8rem;
   position: relative;
 }
 
-.projectsContainer::after,
-.projectsContainer::before {
+.experienceContainer::after,
+.experienceContainer::before {
   content: " ";
   width: 28rem;
   height: 28rem;
   border-radius: 28.125rem;
-  background: #2f00ff;
+  background: #7c66e3;
   position: absolute;
   z-index: -1;
-  filter: blur(400px);
+  filter: blur(250px);
 }
 
-.projectsContainer::after {
-  top: 10rem;
-  left: -10rem;
+.experienceContainer::after {
+  top: 15rem;
+  left: 5rem;
 }
 
-.projectsContainer::before {
-  background: #9e51b9;
-  bottom: 0rem;
-  right: 0rem;
+.experienceContainer::before {
+  background: #62426d;
+  bottom: 10rem;
+  right: 10rem;
 }
 
-.projectsContainer h5 {
+.experienceContainer h5 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 3rem;
