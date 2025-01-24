@@ -42,14 +42,26 @@
   gap: 5px;
 }
 
+.companyLink {
+  text-decoration: none;
+  color: white;
+  width: fit-content;
+}
+
+.companyLink:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 425px) {
   .experiencePointsUl {
     margin-left: 0px;
   }
+
   .experiencePointsUl li {
     padding-left: 0px !important;
   }
-  .projectsContainer{
+
+  .projectsContainer {
     width: 90vw;
   }
 }

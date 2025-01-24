@@ -4,6 +4,7 @@ import Loomerang from "../assets/Loomerang.png";
 const workExperiences = [
   {
     company_name: "Rainforest.Zone",
+    link: "https://rainforest.zone/",
     title: "Full Stack Developer",
     type: "Part-time",
     place: "Bengaluru, Karnataka, India · Remote",
@@ -21,6 +22,7 @@ const workExperiences = [
   },
   {
     company_name: "Rainforest.Zone",
+    link: "https://rainforest.zone/",
     title: "ReactJS/NextJS Developer",
     type: "Internship",
     place: "Bengaluru, Karnataka, India · Remote",
@@ -36,6 +38,7 @@ const workExperiences = [
   },
   {
     company_name: "Loomerang",
+    link: "https://loomerang.com/",
     title: "Frontend Web Developer",
     type: "Internship",
     place: "Seattle, Washington, United States · Remote",

@@ -33,7 +33,9 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}>{experience.company_name}</h3>
+
+        <h3 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}><a href={experience.link} target="_blank" rel="noreferrer" className={Styles.companyLink}>{experience.company_name}</a></h3>
+
         <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.title}, {experience.type}</p>
         <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.place}</p>
       </div>
