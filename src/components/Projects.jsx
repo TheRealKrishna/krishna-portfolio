@@ -10,7 +10,7 @@ export default function Projects({isInView}) {
         <h5>My Projects</h5>
         <div className={Styles.projectsContent}>
           {
-            PROJECTS.map((item) => (
+            PROJECTS(window.location.origin).map((item) => (
               <ProjectsCard key={item.title} details={item} isInView={isInView} />
             )
             )
