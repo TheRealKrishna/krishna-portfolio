@@ -40,31 +40,31 @@
     gap: 3rem;
 }
 
-.contactInfoCard{
+.contactInfoCard {
     flex: 1;
-    opacity:0;
+    opacity: 0;
 }
 
-.contactInfoCard.inView{
+.contactInfoCard.inView {
     position: relative;
     animation: animateleft 2s;
-    opacity:1;
+    opacity: 1;
 }
 
-.contactForm{
+.contactForm {
     flex: 1;
-    opacity:0;
+    opacity: 0;
 }
 
-.contactForm.inView{
+.contactForm.inView {
     position: relative;
     animation: animateright 2s;
-    opacity:1;
+    opacity: 1;
 }
 
 
 @media (max-width: 768px) {
-    .contactContainer{
+    .contactContainer {
         padding-top: 6rem;
     }
 

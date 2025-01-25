@@ -190,6 +190,12 @@
     transition: all 0.3s ease;
 }
 
+.heroImage,
+.techIcon {
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
 .heroImage:hover,
 .techIcon:hover .techIconImage {
     transform: translateY(-0.5rem);

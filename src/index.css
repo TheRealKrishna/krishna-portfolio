@@ -7,10 +7,11 @@
   scroll-behavior: smooth;
 }
 
-body{
+body {
   color: #fff;
   background-color: #060417;
-  overflow-x: hidden !important;
+  max-width: 100dvw;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -19,11 +20,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #7e61e7 ;
+  background-color: #7e61e7;
   outline: 1px solid #7e61e7;
   border-radius: 50px;
 }
 
-.grecaptcha-badge { 
+.grecaptcha-badge {
   visibility: hidden !important;
 }

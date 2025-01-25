@@ -19,6 +19,7 @@ const ExperienceCard = ({ experience }) => {
         background: "#1d1836",
         color: "#fff",
       }}
+      className={Styles.experienceCard}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -32,32 +33,34 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
-
-        <h3 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}><a href={experience.link} target="_blank" rel="noreferrer" className={Styles.companyLink}>{experience.company_name}</a></h3>
-
-        <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.title}, {experience.type}</p>
-        <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.place}</p>
-      </div>
-      {
-        experience.description &&
+      <div className={Styles.experienceCardContent}>
         <div>
-          <p style={{ color: '#E2E8F0', fontSize: '14px', marginTop: '16px' }}>
-            {experience.description}
-          </p>
-        </div>
-      }
 
-      <ul className={Styles.experiencePointsUl} style={{ spaceY: '8px' }}>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            style={{ color: '#E2E8F0', fontSize: '14px', paddingLeft: '4px', letterSpacing: 'wider' }}
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
+          <h3 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}><a href={experience.link} target="_blank" rel="noreferrer" className={Styles.companyLink}>{experience.company_name}</a></h3>
+
+          <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.title}, {experience.type}</p>
+          <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.place}</p>
+        </div>
+        {
+          experience.description &&
+          <div>
+            <p style={{ color: '#E2E8F0', fontSize: '14px', marginTop: '16px' }}>
+              {experience.description}
+            </p>
+          </div>
+        }
+
+        <ul className={Styles.experiencePointsUl} style={{ spaceY: '8px' }}>
+          {experience.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              style={{ color: '#E2E8F0', fontSize: '14px', paddingLeft: '4px', letterSpacing: 'wider' }}
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
     </VerticalTimelineElement>
   );
 };

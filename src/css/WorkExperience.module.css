@@ -7,7 +7,8 @@
 .experienceContainer::after,
 .experienceContainer::before {
   content: " ";
-  width: 28rem;
+  width: calc(100% - 5rem);
+  max-width: 28rem;
   height: 28rem;
   border-radius: 28.125rem;
   background: #7c66e3;
@@ -61,7 +62,7 @@
     padding-left: 0px !important;
   }
 
-  .projectsContainer {
-    width: 90vw;
+  .experienceCard>div {
+    width: 70vw;
   }
 }
