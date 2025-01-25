@@ -36,6 +36,20 @@ import websocketLogo from "../assets/logos/websocket.png";
 
 export const skillsData = [
     {
+        title: "Languages",
+        icon: codeIcon,
+        skills: [
+            { skill: "HTML", color: "#ff4b00", icon: htmlLogo },
+            { skill: "CSS", color: "#208db8", icon: cssLogo },
+            { skill: "JavaScript", color: "#ffdf00", icon: jsLogo },
+            { skill: "TypeScript", color: "#3178c6", icon: typescriptLogo },
+            { skill: "Python", color: "#3771a1", icon: pythonLogo },
+            { skill: "Java", color: "#da380e", icon: javaLogo },
+            { skill: "C++", color: "#004283", icon: cppLogo },
+            { skill: "C", color: "#649ad2", icon: cLogo },
+        ],
+    },
+    {
         title: "Frontend",
         icon: frontendIcon,
         skills: [
@@ -43,8 +57,8 @@ export const skillsData = [
             { skill: "Next JS", color: "#000000", icon: nextjsLogo },
             { skill: "Vite JS", color: "#ffd224", icon: vitejsLogo },
             { skill: "Redux", color: "#764abc", icon: reduxLogo },
-            { skill: "Bootstrap", color: "#7909f7", icon: bootstrapLogo },
             { skill: "Tailwind CSS", color: "#35bef8", icon: tailwindLogo },
+            { skill: "Bootstrap", color: "#7909f7", icon: bootstrapLogo },
         ],
     },
     {
@@ -59,20 +73,6 @@ export const skillsData = [
             { skill: "GraphQL", color: "#e632ad", icon: graphqlLogo },
             { skill: "Socket.io", color: "#ffffff", icon: socketioLogo },
             { skill: "Websocket", color: "#1e191a", icon: websocketLogo },
-        ],
-    },
-    {
-        title: "Languages",
-        icon: codeIcon,
-        skills: [
-            { skill: "HTML", color: "#ff4b00", icon: htmlLogo },
-            { skill: "CSS", color: "#208db8", icon: cssLogo },
-            { skill: "JavaScript", color: "#ffdf00", icon: jsLogo },
-            { skill: "TypeScript", color: "#3178c6", icon: typescriptLogo },
-            { skill: "Python", color: "#3771a1", icon: pythonLogo },
-            { skill: "Java", color: "#da380e", icon: javaLogo },
-            { skill: "C++", color: "#004283", icon: cppLogo },
-            { skill: "C", color: "#649ad2", icon: cLogo },
         ],
     },
     {
