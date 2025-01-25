@@ -7,16 +7,14 @@ export default function SkillsInfoCard({ heading, skills }) {
             <h6>{heading}</h6>
             <div className={Styles.skillsInfoContent}>
                 {skills.map((item, index) => (
-                    <React.Fragment key={`skill_${index}`}>
-                        <div className={Styles.skillInfo}>
-                            <p>{item.skill}</p>
-                            {/* <p className="percentage">{item.percentage}</p> */}
+                    <div key={index}>
+                        <div className={Styles.skill} style={{ border: `3px solid ${item.color}` }}>
+                            <img src={item.icon} alt={item.skill} className={Styles.skillIcon} />
                         </div>
-
-                        <div className={Styles.skillProgressBg}>
-                            <div className={Styles.skillProgress} style={{ width: item.percentage }} />
+                        <div className={Styles.skillTextContainer}>
+                            <p style={{ color: item.color }}>{item.skill}</p>
                         </div>
-                    </React.Fragment>
+                    </div>
                 ))}
             </div>
         </div >
