@@ -35,8 +35,8 @@ app.post("/contact", async (req, res) => {
             subject: "Contact From Krishna Agarwal - Portfolio",
             html: `From ${req.body.firstName} ${req.body.lastName},<br>${req.body.message}`
         }
-        transport.sendMail(message);
-        return res.json({ success: true })
+        const response = await transport.sendMail(message);
+        return res.json({ success: true, response: response })
     }
     catch (error) {
         console.error(error.message)
