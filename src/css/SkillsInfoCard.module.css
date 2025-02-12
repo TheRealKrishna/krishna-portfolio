@@ -89,6 +89,7 @@
 }
 
 .skillTextContainer {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +97,7 @@
 
 .skillTextContainer p {
     font-size: 0.9rem;
+    width: 100%;
     font-weight: 600;
     text-align: center;
     transform: translateY(-1rem);
@@ -116,6 +118,7 @@
     .skillsInfoContent {
         padding: 1rem;
     }
+
     .skill {
         width: 80px;
         height: 80px;
