@@ -31,7 +31,6 @@ const workExperiences = [
     icon: Loomerang,
     iconBg: "#eadbc8",
     date: "June 2024 - August 2024",
-    description: "Loomerang, developed by Brighter Technology LLC, is an innovative platform that empowers creators to design and sell custom clothing using advanced 3D modeling technology. It enables users to bring their clothing designs to life and offer them for sale, providing a seamless experience for both designers and buyers. The platform focuses on user-friendly tools and features, making it easy for creators to design and showcase their unique collections.",
     points: [
       "Developed essential website pages, including landing pages and authentication pages.",
       "Integrated APIs to enable dynamic functionality across the platform.",
