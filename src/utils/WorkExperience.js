@@ -5,7 +5,7 @@ const workExperiences = [
   {
     company_name: "Loomerang",
     link: "https://loomerang.com/",
-    experienceLetterLink: "",
+    experienceLetterLink: "/download/Experience_Letter_Loomerang.pdf",
     title: "Frontend Web Developer",
     type: "Part-Time",
     place: "Seattle, Washington, United States · Remote",
@@ -26,7 +26,7 @@ const workExperiences = [
   {
     company_name: "Loomerang",
     link: "https://loomerang.com/",
-    experienceLetterLink: "",
+    experienceLetterLink: "/download/Experience_Letter_Loomerang.pdf",
     title: "Frontend Web Developer",
     type: "Internship",
     place: "Seattle, Washington, United States · Remote",
@@ -44,6 +44,7 @@ const workExperiences = [
   {
     company_name: "Rainforest.Zone",
     link: "https://rainforest.zone/",
+    experienceLetterLink: "/download/Experience_Letter_Rainforest.pdf",
     title: "Full Stack Developer",
     type: "Part-time",
     place: "Bengaluru, Karnataka, India · Remote",
@@ -62,6 +63,7 @@ const workExperiences = [
   {
     company_name: "Rainforest.Zone",
     link: "https://rainforest.zone/",
+    experienceLetterLink: "/download/Experience_Letter_Rainforest.pdf",
     title: "ReactJS/NextJS Developer",
     type: "Internship",
     place: "Bengaluru, Karnataka, India · Remote",
