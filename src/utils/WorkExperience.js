@@ -5,6 +5,7 @@ const workExperiences = [
   {
     company_name: "Loomerang",
     link: "https://loomerang.com/",
+    experienceLetterLink: "",
     title: "Frontend Web Developer",
     type: "Part-Time",
     place: "Seattle, Washington, United States · Remote",
@@ -25,6 +26,7 @@ const workExperiences = [
   {
     company_name: "Loomerang",
     link: "https://loomerang.com/",
+    experienceLetterLink: "",
     title: "Frontend Web Developer",
     type: "Internship",
     place: "Seattle, Washington, United States · Remote",

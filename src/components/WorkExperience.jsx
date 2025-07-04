@@ -61,6 +61,10 @@ const ExperienceCard = ({ experience }) => {
           ))}
         </ul>
       </div>
+      <div className={Styles.workExperienceLinks}>
+        <p onClick={()=>window.open(experience.link)} className={Styles.workExperienceButtons}>Visit Website</p>
+        <p onClick={()=>window.open(experience.experienceLetterLink)} className={Styles.workExperienceButtons}>Experience Letter</p>
+      </div>
     </VerticalTimelineElement>
   );
 };

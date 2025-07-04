@@ -64,6 +64,7 @@
     cursor: pointer;
     transition: all 0.3 ease;
     position: relative;
+    text-decoration: none;
 }
 
 .projectsLinksButtons:hover {
