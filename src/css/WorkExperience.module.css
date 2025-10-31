@@ -51,6 +51,7 @@
 
 .companyLink:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 @media (max-width: 425px) {
@@ -72,6 +73,11 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
+.workExperienceLinks:has(:only-child) {
+  justify-content: center;
+}
+  
 
 .workExperienceButtons {
   margin-top: 10px;

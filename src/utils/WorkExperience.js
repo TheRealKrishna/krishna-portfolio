@@ -4,7 +4,7 @@ import Loomerang from "../assets/Loomerang.png";
 const workExperiences = [
   {
     company_name: "Loomerang",
-    link: "https://loomerang.com/",
+    // link: "https://loomerang.com/",
     experienceLetterLink: "/download/Experience_Letter_Loomerang.pdf",
     title: "Frontend Web Developer",
     type: "Part-Time",
@@ -25,7 +25,7 @@ const workExperiences = [
   },
   {
     company_name: "Loomerang",
-    link: "https://loomerang.com/",
+    // link: "https://loomerang.com/",
     experienceLetterLink: "/download/Experience_Letter_Loomerang.pdf",
     title: "Frontend Web Developer",
     type: "Internship",
@@ -43,7 +43,7 @@ const workExperiences = [
   },
   {
     company_name: "Rainforest.Zone",
-    link: "https://rainforest.zone/",
+    // link: "https://rainforest.zone/",
     experienceLetterLink: "/download/Experience_Letter_Rainforest.pdf",
     title: "Full Stack Developer",
     type: "Part-time",
@@ -62,7 +62,7 @@ const workExperiences = [
   },
   {
     company_name: "Rainforest.Zone",
-    link: "https://rainforest.zone/",
+    // link: "https://rainforest.zone/",
     experienceLetterLink: "/download/Experience_Letter_Rainforest.pdf",
     title: "ReactJS/NextJS Developer",
     type: "Internship",
