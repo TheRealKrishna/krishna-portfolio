@@ -1,6 +1,5 @@
 import React from 'react'
 import Styles from "../css/Hero.module.css"
-import HeroImage from "../assets/Hero.gif"
 import heroImage from "../assets/hero.jpeg"
 import NodeJSImage from "../assets/logos/nodejs.png"
 import HTMLImage from "../assets/html.png"
@@ -11,7 +10,6 @@ import Typewriter from 'typewriter-effect';
 import ParticlesBackground from './ParticlesBackground'
 import leetcodeIcon from "../assets/leetcode.png"
 import githubIcon from "../assets/github.png"
-import geeksforgeeksIcon from "../assets/geeksforgeeks.png"
 import linkedinIcon from "../assets/linkedin.png"
 
 export default function Hero() {
