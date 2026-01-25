@@ -34,7 +34,7 @@ export default function Footer() {
             About Me
           </h5>
           <p>
-            I'm Krishna Agarwal, a student of computer science deeply passionate about programming and web development. From mastering HTML, CSS & JS to exploring advanced JavaScript frameworks, I thrive on creating seamless digital experiences. Beyond coding, I'm driven by the challenge of innovation and seek to blend technical expertise with creative flair in every project I undertake.
+            Hi, I’m Krishna Agarwal, a Full Stack Developer with hands-on experience in building and deploying scalable, user-friendly web applications. I have worked on real-world projects including AI-powered platforms and e-commerce solutions using React, Next.js, Node.js, Express.js, MongoDB, and Tailwind CSS. I focus on writing clean, maintainable code, creating responsive interfaces, and delivering smooth user experiences, while continuously learning and improving my skills through practical development and problem-solving.
           </p>
         </div>
         <div className={Styles.linksContainer}>
@@ -45,6 +45,7 @@ export default function Footer() {
             {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
             <li><a href="#">Home</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#workExperience">Work Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact-me">Contact Me</a></li>
           </ul>
