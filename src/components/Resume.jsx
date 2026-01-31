@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 
 export default function Resume() {
 
@@ -8,7 +8,7 @@ export default function Resume() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleResume();
   }, []);
 
