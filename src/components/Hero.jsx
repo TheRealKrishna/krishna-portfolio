@@ -37,7 +37,7 @@ export default function Hero() {
                     {/* <a href="https://auth.geeksforgeeks.org/user/therealkrishna" target="_blank" rel='noreferrer'><img title="Geelsforgeeks" className={Styles.socialIconsImage} src={geeksforgeeksIcon} alt="geeksforgeeksIcon" /></a> */}
                 </div>
                 <div className={Styles.resumeDownloadContainer}>
-                    <button className={Styles.resumeDownloadButton} onClick={()=>window.open('https://drive.google.com/file/d/1JJG1Qtet02jifRM2rtrqczS_jVIFhlcz/view?usp=sharing')}>Download Resume</button>
+                    <button className={Styles.resumeDownloadButton} onClick={()=>window.open('/resume')}>Download Resume</button>
                     {/* <button className={Styles.resumeDownloadButton} onClick={()=>window.open('/download/resume.pdf')}>Download Resume</button> */}
                 </div>
                 <ParticlesBackground />
