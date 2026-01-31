@@ -7,9 +7,8 @@ import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
 import { Toaster } from "react-hot-toast";
 import WorkExperience from "./components/WorkExperience";
-import { useEffect } from "react";
 import Resume from "./components/Resume";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   function isInView(skills, Styles) {
