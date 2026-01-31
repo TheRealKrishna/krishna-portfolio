@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Resume() {
-  const navigate = useNavigate();
 
   function handleResume() {
     if (window.location.pathname === "/resume") {
