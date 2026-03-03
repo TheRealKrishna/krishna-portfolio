@@ -1,7 +1,27 @@
 import InstaPhotoAI from "../assets/InstaPhotoAI.png";
 import Loomerang from "../assets/Loomerang.png";
+import ShriGenesis from "../assets/ShriGenesis.jpg";
 
 const workExperiences = [
+  {
+    company_name: "Shri Genesis Software Solutions",
+    link: "https://shrigenesis.com/",
+    title: "Frontend Web Developer",
+    type: "Part-Time",
+    place: "Jaipur, Rajasthan, India · On-site",
+    icon: ShriGenesis,
+    iconBg: "#fff",
+    date: "February 2026 - Present",
+    description: "Shri Genesis Software Solutions is a leading IT services and software development company based in Jaipur, specializing in custom web and mobile applications, AI-powered platforms, SaaS solutions, and secure scalable systems for global clients. With a focus on innovation and security-first development, the team delivers high-quality digital experiences that solve real-world problems and accelerate business growth.\nCurrently, I’m part of the Success.ai project — an AI-driven B2B lead generation and sales automation platform offering access to a massive database of verified contacts, email outreach automation, CRM capabilities, and advanced data enrichment tools.",
+    points: [
+      "Collaborating on both frontend and backend development to enhance the Success.ai platform.",
+      "Implementing optimizations and improving performance across key modules.",
+      "Fixing bugs and resolving issues to ensure smooth, stable user experiences.",
+      "Maintaining security, integrity, and data protection throughout the application.",
+      "Building and integrating new features and pages to expand product capabilities.",
+      "Participating in code reviews, testing, and deployment workflows to uphold high-quality standards."
+    ],
+  },
   {
     company_name: "Loomerang",
     // link: "https://loomerang.com/",

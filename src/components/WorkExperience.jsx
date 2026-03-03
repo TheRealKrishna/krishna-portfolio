@@ -37,11 +37,11 @@ const ExperienceCard = ({ experience }) => {
         <div>
 
           <h3 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}>
-            { experience.link ? (
+            {experience.link ? (
               <a href={experience.link} target="_blank" rel="noreferrer" className={Styles.companyLink}>{experience.company_name}</a>
             ) : (
               <span>{experience.company_name}</span>
-            ) }
+            )}
           </h3>
 
           <p style={{ color: '#A0AEC0', fontSize: '16px', fontWeight: '600', margin: 0 }}>{experience.title}, {experience.type}</p>
@@ -67,12 +67,17 @@ const ExperienceCard = ({ experience }) => {
           ))}
         </ul>
       </div>
-      <div className={Styles.workExperienceLinks}>
-        {
-          experience.link && <p onClick={()=>window.open(experience.link)} className={Styles.workExperienceButtons}>Visit Website</p>
-        }
-        <p onClick={()=>window.open(experience.experienceLetterLink)} className={Styles.workExperienceButtons}>Experience Letter</p>
-      </div>
+      {
+        <div className={Styles.workExperienceLinks}>
+          {
+            experience.link && <p onClick={() => window.open(experience.link)} className={Styles.workExperienceButtons}>Visit Website</p>
+          }
+          {
+            experience.experienceLetterLink &&
+            <p onClick={() => window.open(experience.experienceLetterLink)} className={Styles.workExperienceButtons}>Experience Letter</p>
+          }
+        </div>
+      }
     </VerticalTimelineElement>
   );
 };
