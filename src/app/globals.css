@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/*
+  Design system — "Aurora Noir".
+  A deep space-violet canvas with electric-iris accents, glassmorphism,
+  and aurora gradients. Tokens are exposed to Tailwind via @theme.
+*/
+@theme {
+  --color-base: #050310;
+  --color-base-2: #0a0720;
+  --color-surface: #100b29;
+  --color-iris: #7e61e7;
+  --color-iris-light: #a993fe;
+  --color-iris-bright: #b39dff;
+  --color-cyan: #38e8ff;
+  --color-magenta: #ff5cf0;
+  --color-ink: #ece9ff;
+  --color-muted: #a6a0c8;
+
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-glow: 0 0 60px -15px rgba(126, 97, 231, 0.55);
+  --shadow-glow-strong: 0 0 90px -10px rgba(126, 97, 231, 0.8);
+
+  --animate-aurora: aurora 18s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+:root {
+  color-scheme: dark;
+  --scroll-pad: 6rem;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-pad);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-iris), var(--color-magenta));
+  border-radius: 999px;
+}
+::selection {
+  background: var(--color-iris);
+  color: white;
+}
+
+/* Reusable utilities */
+.glass {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-iris-light),
+    var(--color-cyan) 55%,
+    var(--color-magenta)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(126, 97, 231, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 97, 231, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 75%);
+}
+
+/* Animated gradient border wrapper */
+.gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(126, 97, 231, 0.7),
+    rgba(56, 232, 255, 0.25),
+    rgba(255, 92, 240, 0.5)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

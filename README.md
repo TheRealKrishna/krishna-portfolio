@@ -1,86 +1,82 @@
-<h1>Krishna Agarwal - Personal Portfolio</h1>
-<p>Welcome to My Personal Portfolio! This project is built with React for the frontend and Node.js for the backend API,
-  utilizing Express for server functionality. It serves as a showcase of my projects, skills, and insights about him.
-  Engage with dynamic Three.js visualizations, showcasing my creative prowess. Discover my diverse skill set and past
-  projects, each reflecting my passion and expertise. Connect with me effortlessly through the contact form, enabling
-  seamless communication and collaboration opportunities.</p>
-<h2>Technologies Used</h2>
-<ul>
-  <li>React</li>
-  <li>Three.js</li>
-  <li>Node.js</li>
-  <li>Express</li>
-</ul>
-<h2>Directory Structure</h2>
-<pre><div class="dark bg-gray-950 rounded-md"><div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-scss">krishna-portfolio/ (React frontend)
-│   └── ...
-├── api/ (Node.js backend)
-│   └── ...
-└── README<span class="hljs-selector-class">.md</span>
-</code></div></div></pre>
-<h2>Environment Variables</h2>
-<h3>For Frontend (.env)</h3>
-<ul>
-  <li><code>REACT_APP_BACKEND_URL</code>: Backend API endpoint URL.</li>
-  <li><code>REACT_APP_RECAPTCHA_SITE_KEY</code>: Site key for Google reCAPTCHA verification.</li>
-</ul>
-<h3>For Backend (api/.env)</h3>
-<ul>
-  <li><code>node_mailer_url</code>: URL endpoint for SMTP server.</li>
-  <li><code>node_mailer_username</code>: Username for SMTP server authentication.</li>
-  <li><code>node_mailer_password</code>: Password for SMTP server authentication.</li>
-  <li><code>node_mailer_receiving_email</code>: Email address for receiving messages.</li>
-  <li><code>RECAPTCHA_SECRET_KEY</code>: Secret key for Google reCAPTCHA verification.</li>
-</ul>
-<h2>Setting Up</h2>
-<ol>
-  <li>
-    <p>Clone the repository:</p>
-    <pre><div class="dark bg-gray-950 rounded-md"><div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/TheRealKrishna/krishna-portfolio
-</code></div></div></pre>
-  </li>
-  <li>
-    <p>Navigate to the project directory:</p>
-    <pre><div class="dark bg-gray-950 rounded-md"><div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash"><span class="hljs-built_in">cd</span> krishna-portfolio
-</code></div></div></pre>
-  </li>
-  <li>
-    <p>Set up frontend environment variables by creating a <code>.env</code> file inside the
-      <code>krishna-portfolio</code> directory and add the necessary frontend variables mentioned above.</p>
-  </li>
-  <li>
-    <p>Set up backend environment variables by creating a <code>.env</code> file inside the <code>krishna-portfolio/api</code> directory
-      and add the necessary backend variables mentioned above.</p>
-  </li>
-  <li>
-    <p>Install dependencies for both frontend and backend:</p>
-    <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">npm install
-<span class="hljs-built_in">cd</span> api
+# Krishna Agarwal — Personal Portfolio
+
+A next-generation developer portfolio built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. Server-rendered for first-class SEO, with fluid motion powered by Framer Motion, a dependency-free animated starfield background, 3D tilt cards, and a self-hosted contact pipeline.
+
+## ✨ Highlights
+
+- **Server-side rendered** — all content ships in the initial HTML for SEO and fast first paint.
+- **Rich SEO** — dynamic metadata, Open Graph + Twitter cards, JSON-LD `Person` schema (in SSR HTML), `sitemap.xml`, `robots.txt`, and a web manifest, all generated from a single data source.
+- **Next-gen UI** — aurora-noir design system, glassmorphism, gradient borders, scroll-reveal animations, an interactive parallax starfield, orbiting tech icons, an animated experience timeline, and pointer-driven 3D tilt project cards.
+- **Self-contained** — no external particle, tilt, typewriter, or 3D libraries; everything is hand-built and lightweight.
+- **Built-in contact API** — a Next.js Route Handler validates input server-side and emails via SMTP (gracefully no-ops when SMTP is not configured).
+
+## 🛠 Tech Stack
+
+| Layer        | Technology                                  |
+| ------------ | ------------------------------------------- |
+| Framework    | Next.js (App Router) + React                |
+| Language     | TypeScript                                  |
+| Styling      | Tailwind CSS                                |
+| Animation    | Framer Motion                               |
+| Icons        | react-icons                                 |
+| Email        | Nodemailer (via API Route Handler)          |
+
+## 📁 Structure
+
+```
+krishna-portfolio/
+├── public/
+│   ├── assets/           # images, logos, avatar
+│   └── download/         # résumé + experience letters
+├── src/
+│   ├── app/
+│   │   ├── api/contact/  # contact form Route Handler
+│   │   ├── layout.tsx    # root layout + SEO metadata + JSON-LD
+│   │   ├── page.tsx      # home (server component)
+│   │   ├── globals.css   # design system + Tailwind theme
+│   │   ├── sitemap.ts / robots.ts / manifest.ts
+│   │   └── not-found.tsx
+│   ├── components/       # Navbar, Hero, Skills, Experience, Projects, Contact, Footer, …
+│   └── data/             # profile, skills, projects, experience (typed)
+└── next.config.ts
+```
+
+## 🔧 Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in what you need. The site builds and runs without these — the contact form just no-ops the email send.
+
+| Variable                  | Purpose                                   |
+| ------------------------- | ----------------------------------------- |
+| `SMTP_HOST`               | SMTP server host                          |
+| `SMTP_PORT`               | SMTP port (default `465`)                 |
+| `SMTP_USER`               | SMTP username (also the `from` address)   |
+| `SMTP_PASSWORD`           | SMTP password                             |
+| `CONTACT_RECEIVING_EMAIL` | Inbox that receives contact messages      |
+| `NEXT_PUBLIC_SITE_URL`    | Canonical site URL for SEO/OG/sitemap     |
+
+## 🚀 Getting Started
+
+```bash
+# install dependencies
 npm install
-</code></div></div></pre>
-  </li>
-  <li>
-    <p>Start the backend server:</p>
-    <pre><div class="dark bg-gray-950 rounded-md"><div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-sql">node <span class="hljs-keyword">index.js</span>
-</code></div></div></pre>
-  </li>
-  <li>
-    <p>Start the frontend development server:</p>
-    <pre><div class="dark bg-gray-950 rounded-md"><div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-sql"><span class="hljs-keyword">cd..</span>
-npm <span class="hljs-keyword">start</span>
-</code></div></div></pre>
-  </li>
-  <li>
-    <p>Access the application at <code>http://localhost:3000</code>.</p>
-  </li>
-</ol>
-<h2>Features</h2>
-<ul>
-  <li>Showcase of projects and skills</li>
-  <li>Dynamic Three.js visualizations</li>
-  <li>Contact form for seamless communication</li>
-  <li>Easy collaboration opportunities</li>
-</ul>
-<h2>License</h2>
-<p>This project is licensed under the <a target="_new">MIT License</a>.</p>
-<p>Feel free to reach out if you have any questions or suggestions! 😊</p>
+
+# run the dev server
+npm run dev
+
+# production build + start
+npm run build
+npm run start
+```
+
+Then open <http://localhost:3000>.
+
+## 📦 Scripts
+
+- `npm run dev` — start the development server
+- `npm run build` — create an optimized production build
+- `npm run start` — run the production server
+- `npm run lint` — lint the project
+
+## License
+
+MIT. Feel free to reach out with questions or suggestions! 😊

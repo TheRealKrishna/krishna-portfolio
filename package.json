@@ -1,52 +1,32 @@
 {
   "name": "krishna-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@react-three/drei": "^9.97.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@tsparticles/engine": "^3.2.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.2.1",
-    "framer-motion": "^12.0.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-google-recaptcha": "^3.1.0",
-    "react-hot-toast": "^2.4.1",
-    "react-icons": "^5.0.1",
-    "react-router-dom": "^7.13.0",
-    "react-scripts": "5.0.1",
-    "react-three-fiber": "^6.0.13",
-    "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.5.3",
-    "three": "^0.161.0",
-    "typewriter-effect": "^2.21.0",
-    "web-vitals": "^2.1.4"
-  },
+  "description": "Krishna Agarwal — Full Stack Developer portfolio. Next.js, TypeScript, Tailwind CSS, server-rendered for SEO.",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "framer-motion": "^12.0.5",
+    "next": "^15.5.19",
+    "nodemailer": "^8.0.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.7",
+    "@types/nodemailer": "^8.0.0",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.5.19",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.3"
   }
 }
