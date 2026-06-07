@@ -106,18 +106,21 @@ export default function Hero() {
         </motion.div>
 
         <motion.div variants={item} className="mt-8 flex items-center gap-3">
-          {socialLinks.slice(0, 4).map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={s.label}
-              className="grid h-11 w-11 place-items-center rounded-full border border-iris/30 bg-white/5 text-muted transition-all hover:-translate-y-1 hover:border-iris hover:text-white hover:shadow-glow"
-            >
-              <SocialIcon name={s.icon} className="text-lg" />
-            </a>
-          ))}
+          {socialLinks
+            .filter((s) => s.icon !== "x")
+            .slice(0, 4)
+            .map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="grid h-11 w-11 place-items-center rounded-full border border-iris/30 bg-white/5 text-muted transition-all hover:-translate-y-1 hover:border-iris hover:text-white hover:shadow-glow"
+              >
+                <SocialIcon name={s.icon} className="text-lg" />
+              </a>
+            ))}
         </motion.div>
       </motion.div>
 
