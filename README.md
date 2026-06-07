@@ -27,7 +27,7 @@ A next-generation developer portfolio built with **Next.js (App Router)**, **Typ
 krishna-portfolio/
 ├── public/
 │   ├── assets/           # images, logos, avatar
-│   └── download/         # résumé + experience letters
+│   └── download/         # resume + experience letters
 ├── src/
 │   ├── app/
 │   │   ├── api/contact/  # contact form Route Handler

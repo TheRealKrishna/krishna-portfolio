@@ -8,9 +8,38 @@ type ContactPayload = {
   lastName?: string;
   email?: string;
   message?: string;
+  recaptchaToken?: string | null;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/** Minimum v3 score to accept (0.0 = bot, 1.0 = human). 0.5 is Google's default. */
+const RECAPTCHA_MIN_SCORE = 0.5;
+
+/**
+ * Verify a reCAPTCHA v3 token with Google. Returns true when verification
+ * passes, or when reCAPTCHA isn't configured (graceful no-op for dev/preview).
+ */
+async function verifyRecaptcha(token: string | null | undefined): Promise<boolean> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secret) return true; // not configured — skip the check
+
+  if (!token) return false;
+
+  try {
+    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token }),
+    });
+    const data: { success?: boolean; score?: number; action?: string } =
+      await res.json();
+    return Boolean(data.success) && (data.score ?? 0) >= RECAPTCHA_MIN_SCORE;
+  } catch (error) {
+    console.error("[contact] reCAPTCHA verification failed:", error);
+    return false;
+  }
+}
 
 /** Escape user input before embedding it in the notification HTML email. */
 function escapeHtml(value: string): string {
@@ -55,6 +84,15 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { success: false, error: "Message is too long." },
       { status: 400 }
+    );
+  }
+
+  // Bot protection — reject low-score / missing tokens when reCAPTCHA is on.
+  const humanVerified = await verifyRecaptcha(body.recaptchaToken);
+  if (!humanVerified) {
+    return NextResponse.json(
+      { success: false, error: "Failed bot verification. Please try again." },
+      { status: 403 }
     );
   }
 

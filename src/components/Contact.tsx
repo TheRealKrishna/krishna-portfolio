@@ -11,6 +11,7 @@ import {
   FaCircleNotch,
 } from "react-icons/fa6";
 import { siteConfig } from "@/data/profile";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 import SectionHeading from "./SectionHeading";
 import { Reveal } from "./motion-primitives";
 
@@ -39,10 +40,13 @@ export default function Contact() {
     setSending(true);
     setError(null);
     try {
+      // Mint a reCAPTCHA v3 token (null when reCAPTCHA isn't configured).
+      const recaptchaToken = await getRecaptchaToken("contact").catch(() => null);
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       });
       const json = await res.json();
       if (res.ok && json.success) {
@@ -122,7 +126,7 @@ export default function Contact() {
                 rel="noreferrer"
                 className="font-semibold text-iris-light underline-offset-4 hover:underline"
               >
-                résumé
+                resume
               </a>{" "}
               or connect on{" "}
               <a

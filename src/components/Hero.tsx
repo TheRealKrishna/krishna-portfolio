@@ -93,7 +93,7 @@ export default function Hero() {
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:shadow-glow-strong hover:brightness-110"
           >
-            View Résumé
+            View Resume
             <FaArrowUpRightFromSquare className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
@@ -128,39 +128,64 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         className="relative flex flex-1 items-center justify-center"
       >
-        <div className="relative h-[20rem] w-[20rem] sm:h-[24rem] sm:w-[24rem]">
-          {/* Rotating dashed rings */}
-          <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-iris/30" />
+        {/* Extra padding on the wrapper guarantees orbit chips never clip. */}
+        <div className="relative grid h-[22rem] w-[22rem] place-items-center sm:h-[26rem] sm:w-[26rem]">
+          {/* Animated conic gradient glow ring */}
           <div
-            className="absolute inset-6 rounded-full border border-dashed border-magenta/20"
+            className="absolute inset-[8%] rounded-full opacity-70 blur-md"
+            style={{
+              background:
+                "conic-gradient(from 0deg, var(--color-iris), var(--color-cyan), var(--color-magenta), var(--color-iris))",
+              animation: "spin 8s linear infinite",
+            }}
+          />
+          {/* Rotating dashed orbit rings */}
+          <div className="absolute inset-[4%] animate-spin-slow rounded-full border border-dashed border-iris/25" />
+          <div
+            className="absolute inset-[14%] rounded-full border border-dashed border-magenta/20"
             style={{ animation: "spin 22s linear infinite reverse" }}
           />
 
-          {/* Glow */}
-          <div className="absolute inset-10 rounded-full bg-iris/30 blur-3xl" />
-
-          {/* Avatar */}
-          <div className="absolute inset-10 overflow-hidden rounded-full border-2 border-iris/40 shadow-glow-strong">
-            <Image
-              src={siteConfig.avatar}
-              alt="Krishna Agarwal"
-              fill
-              priority
-              sizes="(max-width: 640px) 16rem, 20rem"
-              className="scale-x-[-1] object-cover"
+          {/* Avatar — gradient ring + duotone grade + sheen + vignette */}
+          <div className="group relative h-[64%] w-[64%]">
+            {/* Gradient ring border */}
+            <div
+              className="absolute -inset-1 rounded-full"
+              style={{
+                background:
+                  "conic-gradient(from 140deg, var(--color-iris-light), var(--color-cyan), var(--color-magenta), var(--color-iris-light))",
+              }}
             />
+            <div className="absolute inset-0 overflow-hidden rounded-full border-[3px] border-base shadow-glow-strong">
+              <Image
+                src={siteConfig.avatar}
+                alt="Krishna Agarwal"
+                fill
+                priority
+                sizes="(max-width: 640px) 14rem, 17rem"
+                className="scale-x-[-1] object-cover saturate-[0.9] transition-all duration-700 ease-out group-hover:scale-105 group-hover:saturate-110"
+              />
+              {/* Duotone color grade — tints the photo into the palette */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-iris/45 via-transparent to-magenta/35 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-40" />
+              {/* Bottom fade so the image melts into the page */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-base/70 via-transparent to-transparent" />
+              {/* Top sheen */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/15 to-transparent opacity-60" />
+              {/* Inner vignette ring */}
+              <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_50px_rgba(5,3,16,0.65)]" />
+            </div>
           </div>
 
-          {/* Orbiting tech icons */}
+          {/* Orbiting tech icons — start at top, safe radius keeps them in bounds */}
           {orbitTech.map((tech, i) => {
-            const angle = (i / orbitTech.length) * Math.PI * 2;
-            const radius = 50; // % of container
+            const angle = (i / orbitTech.length) * Math.PI * 2 - Math.PI / 2;
+            const radius = 42; // % of wrapper — comfortably inside the padding
             const x = 50 + Math.cos(angle) * radius;
             const y = 50 + Math.sin(angle) * radius;
             return (
               <motion.div
                 key={tech.alt}
-                className="absolute grid place-items-center rounded-2xl border border-white/10 bg-base-2/80 p-2.5 backdrop-blur-md"
+                className="absolute grid place-items-center rounded-2xl border border-white/10 bg-base-2/80 p-2.5 shadow-lg backdrop-blur-md"
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
@@ -183,8 +208,20 @@ export default function Hero() {
               </motion.div>
             );
           })}
+
+          {/* Floating glass badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="absolute -bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
+          >
+            <span className="text-base">⚡</span>
+            <span className="text-white/90">2+ yrs building for the web</span>
+          </motion.div>
         </div>
       </motion.div>
+
 
       {/* Scroll cue */}
       <motion.a
