@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="relative mt-24 border-t border-white/10 bg-base-2/60">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
         {/* About */}
         <div className="flex flex-col gap-4">
           <a href="#home" className="flex items-center gap-2.5">

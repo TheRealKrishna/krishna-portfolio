@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center gap-12 px-6 pb-16 pt-32 md:flex-row md:gap-8 md:pt-28"
+      className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center gap-12 px-5 pb-16 pt-28 sm:px-6 md:flex-row md:gap-8 md:pt-28"
     >
       {/* Left: copy */}
       <motion.div
@@ -62,14 +62,14 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="mt-1 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+          className="mt-1 text-[2.5rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
         >
           Krishna <span className="text-gradient">Agarwal</span>
         </motion.h1>
 
         <motion.div
           variants={item}
-          className="mt-4 flex h-9 items-center text-2xl font-semibold sm:text-3xl"
+          className="mt-4 flex min-h-9 flex-wrap items-center justify-center text-xl font-semibold sm:text-3xl md:justify-start"
         >
           <span className="text-muted">I’m a&nbsp;</span>
           <Typewriter words={[...typewriterRoles]} className="text-iris-light" />
@@ -85,20 +85,20 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+          className="mt-8 flex w-full flex-col items-stretch gap-3 xs:flex-row xs:flex-wrap xs:items-center xs:justify-center sm:gap-4 md:justify-start"
         >
           <a
             href={siteConfig.resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:shadow-glow-strong hover:brightness-110"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:shadow-glow-strong hover:brightness-110"
           >
             View Resume
             <FaArrowUpRightFromSquare className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:border-iris/50 hover:bg-white/10"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:border-iris/50 hover:bg-white/10"
           >
             See my work
             <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
@@ -128,8 +128,8 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         className="relative flex flex-1 items-center justify-center"
       >
-        {/* Extra padding on the wrapper guarantees orbit chips never clip. */}
-        <div className="relative grid h-[22rem] w-[22rem] place-items-center sm:h-[26rem] sm:w-[26rem]">
+        {/* Fluid size keeps the whole orbit within the viewport down to 320px. */}
+        <div className="relative grid aspect-square w-[min(20rem,82vw)] place-items-center sm:w-[26rem]">
           {/* Animated conic gradient glow ring */}
           <div
             className="absolute inset-[8%] rounded-full opacity-70 blur-md"
@@ -163,7 +163,7 @@ export default function Hero() {
                 fill
                 priority
                 sizes="(max-width: 640px) 14rem, 17rem"
-                className="scale-x-[-1] object-cover saturate-[0.9] transition-all duration-700 ease-out group-hover:scale-105 group-hover:saturate-110"
+                className="scale-x-[-1] object-cover saturate-[0.9] transition-all duration-700 ease-out group-hover:saturate-110"
               />
               {/* Duotone color grade — tints the photo into the palette */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-iris/45 via-transparent to-magenta/35 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-40" />
@@ -185,7 +185,7 @@ export default function Hero() {
             return (
               <motion.div
                 key={tech.alt}
-                className="absolute grid place-items-center rounded-2xl border border-white/10 bg-base-2/80 p-2.5 shadow-lg backdrop-blur-md"
+                className="absolute grid place-items-center rounded-xl border border-white/10 bg-base-2/80 p-2 shadow-lg backdrop-blur-md sm:rounded-2xl sm:p-2.5"
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
@@ -203,7 +203,7 @@ export default function Hero() {
                   alt={tech.alt}
                   width={tech.size}
                   height={tech.size}
-                  className="h-7 w-7 object-contain sm:h-8 sm:w-8"
+                  className="h-6 w-6 object-contain sm:h-8 sm:w-8"
                 />
               </motion.div>
             );
@@ -214,10 +214,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute -bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
+            className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
           >
             <span className="text-base">⚡</span>
-            <span className="text-white/90">2+ yrs building for the web</span>
+            <span className="text-white/90">5+ yrs building for the web</span>
           </motion.div>
         </div>
       </motion.div>

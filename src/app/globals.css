@@ -6,6 +6,8 @@
   and aurora gradients. Tokens are exposed to Tailwind via @theme.
 */
 @theme {
+  --breakpoint-xs: 25rem;
+
   --color-base: #050310;
   --color-base-2: #0a0720;
   --color-surface: #100b29;

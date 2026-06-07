@@ -11,7 +11,7 @@ export default function Projects({ host }: { host: string }) {
   const projects = getProjects(host);
 
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="projects" className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
       <SectionHeading
         eyebrow="Selected Work"
         title="Projects I’ve Built"

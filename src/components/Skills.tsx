@@ -12,7 +12,7 @@ export default function Skills() {
   const category = skillCategories[active];
 
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="skills" className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
       <SectionHeading
         eyebrow="Technical Proficiency"
         title="Skills & Tools I Work With"
@@ -28,7 +28,7 @@ export default function Skills() {
                 key={cat.title}
                 type="button"
                 onClick={() => setActive(i)}
-                className={`relative rounded-xl px-5 py-2.5 text-sm font-semibold transition-colors ${
+                className={`relative rounded-xl px-3.5 py-2 text-sm font-semibold transition-colors sm:px-5 sm:py-2.5 ${
                   active === i ? "text-white" : "text-muted hover:text-white"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Skills() {
           </div>
 
           {/* Skill grid */}
-          <div className="p-6 sm:p-8">
+          <div className="p-4 sm:p-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={category.title}
@@ -63,10 +63,10 @@ export default function Skills() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.04, duration: 0.3 }}
                       whileHover={{ y: -5 }}
-                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 transition-colors hover:bg-white/[0.07]"
+                      className="group flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-colors hover:bg-white/[0.07] sm:gap-3 sm:p-3.5"
                     >
                       <span
-                        className="grid h-11 w-11 shrink-0 place-items-center rounded-xl p-2 transition-all"
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-xl p-2 transition-all sm:h-11 sm:w-11"
                         style={{
                           backgroundColor: `${skill.color}1a`,
                           boxShadow: `inset 0 0 0 1px ${skill.color}55`,
@@ -80,7 +80,7 @@ export default function Skills() {
                           className="h-6 w-6 object-contain transition-transform group-hover:scale-110"
                         />
                       </span>
-                      <span className="text-sm font-medium text-white/90">
+                      <span className="min-w-0 break-words text-xs font-medium text-white/90 sm:text-sm">
                         {skill.name}
                       </span>
                     </motion.div>

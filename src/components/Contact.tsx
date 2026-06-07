@@ -69,7 +69,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
       <SectionHeading
         eyebrow="Get In Touch"
         title="Let’s Build Something Together"

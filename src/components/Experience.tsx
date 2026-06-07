@@ -12,7 +12,7 @@ import SectionHeading from "./SectionHeading";
 
 function ExperienceCard({ exp }: { exp: Experience }) {
   return (
-    <div className="gradient-border group relative rounded-3xl bg-surface/60 p-6 backdrop-blur-md transition-all duration-300 hover:bg-surface sm:p-7">
+    <div className="gradient-border group relative rounded-3xl bg-surface/60 p-5 backdrop-blur-md transition-all duration-300 hover:bg-surface sm:p-7">
       <div className="flex items-start gap-4">
         <span
           className="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-2xl"
@@ -96,7 +96,7 @@ function ExperienceCard({ exp }: { exp: Experience }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="experience" className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
       <SectionHeading
         eyebrow="Career Journey"
         title="Work Experience"
@@ -105,7 +105,7 @@ export default function Experience() {
 
       <div className="relative mt-16">
         {/* Center spine (desktop) / left spine (mobile) */}
-        <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-iris/60 via-magenta/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
+        <div className="absolute left-3 top-0 h-full w-px bg-gradient-to-b from-iris/60 via-magenta/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
 
         <div className="flex flex-col gap-10">
           {experiences.map((exp, i) => {
@@ -113,10 +113,10 @@ export default function Experience() {
             return (
               <div
                 key={`${exp.company}-${i}`}
-                className="relative pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0"
+                className="relative pl-9 sm:pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0"
               >
                 {/* Node dot */}
-                <span className="absolute left-4 top-7 z-10 -translate-x-1/2 md:left-1/2">
+                <span className="absolute left-3 top-7 z-10 -translate-x-1/2 md:left-1/2">
                   <span className="relative grid h-4 w-4 place-items-center">
                     <span className="absolute h-4 w-4 animate-ping rounded-full bg-iris/40" />
                     <span className="h-3.5 w-3.5 rounded-full border-2 border-base bg-gradient-to-br from-iris to-magenta" />
