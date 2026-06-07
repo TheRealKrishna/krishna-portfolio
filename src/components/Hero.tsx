@@ -214,7 +214,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute -bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
+            className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
           >
             <span className="text-base">⚡</span>
             <span className="text-white/90">5+ yrs building for the web</span>
