@@ -163,7 +163,7 @@ export default function Hero() {
                 fill
                 priority
                 sizes="(max-width: 640px) 14rem, 17rem"
-                className="scale-x-[-1] object-cover saturate-[0.9] transition-all duration-700 ease-out group-hover:saturate-110"
+                className="scale-x-[-1] object-cover saturate-[0.9] transition-[filter] duration-700 ease-out group-hover:saturate-110"
               />
               {/* Duotone color grade — tints the photo into the palette */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-iris/45 via-transparent to-magenta/35 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-40" />
@@ -214,7 +214,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
+            className="absolute -bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-base-2/90 px-4 py-2 text-xs font-semibold shadow-glow backdrop-blur-md"
           >
             <span className="text-base">⚡</span>
             <span className="text-white/90">5+ yrs building for the web</span>
