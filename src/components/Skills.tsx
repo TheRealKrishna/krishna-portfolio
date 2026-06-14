@@ -22,13 +22,13 @@ export default function Skills() {
       <Reveal className="mt-14" delay={0.1}>
         <div className="overflow-hidden rounded-3xl glass">
           {/* Category tabs */}
-          <div className="flex flex-wrap gap-2 border-b border-white/10 p-4 sm:p-5">
+          <div className="grid grid-cols-2 gap-2 border-b border-white/10 p-4 sm:grid-cols-4 sm:p-5">
             {skillCategories.map((cat, i) => (
               <button
                 key={cat.title}
                 type="button"
                 onClick={() => setActive(i)}
-                className={`relative rounded-xl px-3.5 py-2 text-sm font-semibold transition-colors sm:px-5 sm:py-2.5 ${
+                className={`relative rounded-xl px-3.5 py-2 text-center text-sm font-semibold transition-colors sm:px-5 sm:py-2.5 ${
                   active === i ? "text-white" : "text-muted hover:text-white"
                 }`}
               >
