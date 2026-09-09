@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
   {
     company: "Shri Genesis Software Solutions",
     link: "https://shrigenesis.com/",
-    title: "Frontend Web Developer",
+    title: "MERN Stack Developer",
     type: "Full-Time",
     place: "Jaipur, Rajasthan, India · On-site",
     icon: "/assets/ShriGenesis.jpg",
