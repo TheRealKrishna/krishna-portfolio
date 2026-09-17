@@ -57,7 +57,7 @@ export default function Hero() {
           variants={item}
           className="mt-6 text-lg font-medium text-muted"
         >
-          Hello, I'm
+          Hello, I&apos;m
         </motion.p>
 
         <motion.h1
@@ -74,7 +74,7 @@ export default function Hero() {
           variants={item}
           className="mt-4 flex min-h-10 flex-wrap items-center justify-center gap-1 text-xl font-semibold sm:text-2xl lg:justify-start lg:text-3xl"
         >
-          <span className="text-muted">I'm a</span>
+          <span className="text-muted">I&apos;m a</span>
           <Typewriter
             words={[...typewriterRoles]}
             className="ml-2 text-iris-light"
