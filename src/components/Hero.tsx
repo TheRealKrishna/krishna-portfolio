@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-5 py-20 sm:px-6 lg:flex-row lg:gap-20 lg:py-0"
+      className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-12 overflow-x-clip px-5 py-20 sm:gap-16 sm:px-6 lg:flex-row lg:gap-20 lg:py-0"
     >
       {/* Left: Content */}
       <motion.div
@@ -132,9 +132,9 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-        className="relative z-10 flex flex-1 items-center justify-center"
+        className="relative z-10 flex w-full flex-1 items-center justify-center"
       >
-        <div className="relative w-full max-w-md">
+        <div className="relative w-full max-w-[min(28rem,calc(100vw-4rem))]">
           {/* Main profile card with premium effects */}
           <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-base-2/90 to-base-3/80 p-1 shadow-2xl backdrop-blur-xl">
             {/* Animated gradient border */}
@@ -164,24 +164,24 @@ export default function Hero() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 to-transparent" />
 
               {/* Tech stack badges overlaid on image */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="flex flex-wrap gap-2">
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {techStack.map((tech, i) => (
                     <motion.div
                       key={tech.alt}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
-                      className="group/badge flex items-center gap-2 rounded-full border border-white/15 bg-base-2/90 px-3 py-1.5 backdrop-blur-xl transition-all hover:scale-105 hover:border-iris/50 hover:bg-base-2"
+                      className="group/badge flex items-center gap-1.5 rounded-full border border-white/15 bg-base-2/90 px-2 py-1 backdrop-blur-xl transition-all hover:scale-105 hover:border-iris/50 hover:bg-base-2 sm:gap-2 sm:px-3 sm:py-1.5"
                     >
                       <Image
                         src={tech.src}
                         alt={tech.alt}
                         width={16}
                         height={16}
-                        className="h-4 w-4 object-contain transition-transform group-hover/badge:scale-110"
+                        className="h-3.5 w-3.5 object-contain transition-transform group-hover/badge:scale-110 sm:h-4 sm:w-4"
                       />
-                      <span className="text-xs font-medium text-white/90">
+                      <span className="text-[0.65rem] font-medium text-white/90 sm:text-xs">
                         {tech.label}
                       </span>
                     </motion.div>
@@ -194,12 +194,16 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute right-6 top-6 flex items-center gap-2 rounded-full border border-white/15 bg-base-2/95 px-4 py-2 backdrop-blur-xl"
+                className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full border border-white/15 bg-base-2/95 px-3 py-1.5 backdrop-blur-xl sm:right-6 sm:top-6 sm:gap-2 sm:px-4 sm:py-2"
               >
-                <span className="text-lg">⚡</span>
+                <span className="text-base sm:text-lg">⚡</span>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold text-white">5+ Years</span>
-                  <span className="text-[10px] text-muted">Experience</span>
+                  <span className="text-[0.65rem] font-bold text-white sm:text-xs">
+                    5+ Years
+                  </span>
+                  <span className="text-[9px] text-muted sm:text-[10px]">
+                    Experience
+                  </span>
                 </div>
               </motion.div>
             </div>
@@ -216,9 +220,9 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -left-6 -top-6 grid h-16 w-16 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-iris/20 to-magenta/20 backdrop-blur-xl"
+            className="absolute -left-2 -top-3 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-iris/20 to-magenta/20 backdrop-blur-xl sm:-left-6 sm:-top-6 sm:h-16 sm:w-16"
           >
-            <span className="text-3xl">💻</span>
+            <span className="text-2xl sm:text-3xl">💻</span>
           </motion.div>
 
           <motion.div
@@ -232,9 +236,9 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1,
             }}
-            className="absolute -bottom-4 -right-4 grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-cyan/20 to-iris/20 backdrop-blur-xl"
+            className="absolute -bottom-2 -right-2 grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-cyan/20 to-iris/20 backdrop-blur-xl sm:-bottom-4 sm:-right-4 sm:h-14 sm:w-14"
           >
-            <span className="text-2xl">🚀</span>
+            <span className="text-xl sm:text-2xl">🚀</span>
           </motion.div>
         </div>
       </motion.div>
