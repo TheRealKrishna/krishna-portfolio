@@ -240,7 +240,7 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        Send Message <FaPaperPlane className="text-xs" />
+                        Send Message <FaPaperPlane className="text-xs cursor-pointer" />
                       </>
                     )}
                   </button>
