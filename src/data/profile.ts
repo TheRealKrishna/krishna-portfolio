@@ -13,11 +13,11 @@ export const siteConfig = {
     "I’m Krishna Agarwal, a Full Stack Developer with hands-on experience building and deploying scalable, user-friendly web applications. I’ve shipped real-world products — AI-powered platforms, real-time apps, and e-commerce solutions — using React, Next.js, Node.js, Express, MongoDB, and Tailwind CSS. I care about clean, maintainable code, responsive interfaces, and smooth user experiences.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://krishna.works",
-  email: "contact@krishna.works",
+  email: "contact@krishna.cv",
   discord: "therealkrishna",
   location: "India",
-  avatar: "/assets/hero.jpeg",
-  ogImage: "/assets/hero.jpeg",
+  avatar: "/assets/hero-new.jpg",
+  ogImage: "/assets/hero-new.jpg",
   resumeUrl: "/resume",
   keywords: [
     "Krishna Agarwal",
@@ -56,19 +56,9 @@ export const socialLinks: SocialLink[] = [
     icon: "leetcode",
   },
   {
-    label: "X",
-    href: "https://x.com/TheRealKrishna_",
-    icon: "x",
-  },
-  {
     label: "Instagram",
     href: "https://www.instagram.com/therealkrishna__/",
     icon: "instagram",
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/TheRealKrishnaAgarwal",
-    icon: "facebook",
   },
 ];
 

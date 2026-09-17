@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaXmark, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { navLinks } from "@/data/profile";
+import Image from "next/image";
 
 const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
 
@@ -61,11 +62,17 @@ export default function Navbar() {
           className="group flex items-center gap-2.5"
           aria-label="Krishna Agarwal — home"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-iris to-magenta text-sm font-extrabold text-white shadow-glow transition-transform group-hover:scale-110">
-            K
-          </span>
+          <Image
+            src="/assets/logo.gif"
+            alt="Krishna Agarwal Logo"
+            width={36}
+            height={36}
+            className="rounded-xl transition-transform group-hover:scale-110"
+            priority
+            unoptimized
+          />
           <span className="text-sm font-bold tracking-tight">
-            Krishna<span className="text-iris-light">.</span>
+            Krishna
           </span>
         </a>
 

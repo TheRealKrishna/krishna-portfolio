@@ -38,6 +38,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "Redux", color: "#a877e6", icon: logo("redux.svg") },
       { name: "Tailwind CSS", color: "#35bef8", icon: logo("tailwind.png") },
       { name: "Bootstrap", color: "#9b5cf6", icon: logo("bootstrap.png") },
+      { name: "Framer Motion", color: "#ff0055", icon: logo("framer.svg") },
+      { name: "Material-UI", color: "#007fff", icon: logo("mui.svg") },
     ],
   },
   {

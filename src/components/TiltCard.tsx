@@ -55,12 +55,12 @@ export default function TiltCard({
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
-      className={`group relative ${className}`}
+      className={`group relative overflow-hidden rounded-3xl ${className}`}
     >
       <motion.div
         aria-hidden
         style={{ background }}
-        className="pointer-events-none absolute inset-0 -z-10 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
       {children}
     </motion.div>

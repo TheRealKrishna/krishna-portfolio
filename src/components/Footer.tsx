@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa6";
 import { navLinks, siteConfig, socialLinks } from "@/data/profile";
 import { SocialIcon } from "./SocialIcon";
+import Image from "next/image";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -24,10 +25,15 @@ export default function Footer() {
         {/* About */}
         <div className="flex flex-col gap-4">
           <a href="#home" className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-iris to-magenta text-sm font-extrabold text-white">
-              K
-            </span>
-            <span className="text-base font-bold">Krishna Agarwal</span>
+            <Image
+              src="/assets/logo.gif"
+              alt="Krishna Agarwal Logo"
+              width={36}
+              height={36}
+              className="rounded-xl"
+              unoptimized
+            />
+            <span className="text-[1rem] font-bold text-white">Krishna Agarwal</span>
           </a>
           <p className="max-w-sm text-sm leading-relaxed text-muted">
             {siteConfig.longBio}
@@ -40,9 +46,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={s.label}
-                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-muted transition-all hover:-translate-y-1 hover:border-iris/50 hover:text-white"
+                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 transition-all hover:-translate-y-1 hover:border-iris/50 hover:bg-white/10 hover:text-white"
               >
-                <SocialIcon name={s.icon} className="text-base" />
+                <SocialIcon name={s.icon} className="text-[1rem]" />
               </a>
             ))}
           </div>
