@@ -13,13 +13,16 @@ type ContactPayload = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Minimum v3 score to accept (0.0 = bot, 1.0 = human). 0.5 is Google's default. */
+/* TEMPORARILY DISABLED — reCAPTCHA is off until the keys are rotated.
+   Restore this block and the call site in POST() below to re-enable.
+
+/** Minimum v3 score to accept (0.0 = bot, 1.0 = human). 0.5 is Google's default. * /
 const RECAPTCHA_MIN_SCORE = 0.5;
 
 /**
  * Verify a reCAPTCHA v3 token with Google. Returns true when verification
  * passes, or when reCAPTCHA isn't configured (graceful no-op for dev/preview).
- */
+ * /
 async function verifyRecaptcha(token: string | null | undefined): Promise<boolean> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) return true; // not configured — skip the check
@@ -40,6 +43,7 @@ async function verifyRecaptcha(token: string | null | undefined): Promise<boolea
     return false;
   }
 }
+*/
 
 /** Escape user input before embedding it in the notification HTML email. */
 function escapeHtml(value: string): string {
@@ -87,14 +91,16 @@ export async function POST(request: Request) {
     );
   }
 
+  // TEMPORARILY DISABLED — reCAPTCHA is off until the keys are rotated.
+  // NOTE: with this commented out the contact endpoint has NO bot protection.
   // Bot protection — reject low-score / missing tokens when reCAPTCHA is on.
-  const humanVerified = await verifyRecaptcha(body.recaptchaToken);
-  if (!humanVerified) {
-    return NextResponse.json(
-      { success: false, error: "Failed bot verification. Please try again." },
-      { status: 403 }
-    );
-  }
+  // const humanVerified = await verifyRecaptcha(body.recaptchaToken);
+  // if (!humanVerified) {
+  //   return NextResponse.json(
+  //     { success: false, error: "Failed bot verification. Please try again." },
+  //     { status: 403 }
+  //   );
+  // }
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env;
   const receiver = process.env.CONTACT_RECEIVING_EMAIL || SMTP_USER;

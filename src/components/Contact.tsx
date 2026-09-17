@@ -11,7 +11,8 @@ import {
   FaCircleNotch,
 } from "react-icons/fa6";
 import { siteConfig } from "@/data/profile";
-import { getRecaptchaToken } from "@/lib/recaptcha";
+// TEMPORARILY DISABLED — reCAPTCHA is off until the site/secret keys are rotated.
+// import { getRecaptchaToken } from "@/lib/recaptcha";
 import SectionHeading from "./SectionHeading";
 import { Reveal } from "./motion-primitives";
 
@@ -40,13 +41,14 @@ export default function Contact() {
     setSending(true);
     setError(null);
     try {
+      // TEMPORARILY DISABLED — reCAPTCHA is off until the keys are rotated.
       // Mint a reCAPTCHA v3 token (null when reCAPTCHA isn't configured).
-      const recaptchaToken = await getRecaptchaToken("contact").catch(() => null);
+      // const recaptchaToken = await getRecaptchaToken("contact").catch(() => null);
 
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, recaptchaToken }),
+        body: JSON.stringify({ ...form }),
       });
       const json = await res.json();
       if (res.ok && json.success) {
