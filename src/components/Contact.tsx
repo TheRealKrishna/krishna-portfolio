@@ -232,7 +232,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-6 py-3.5 text-sm font-bold text-white shadow-glow transition-all hover:shadow-glow-strong hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="mt-1 inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-6 py-3.5 text-sm font-bold text-white shadow-glow transition-all hover:shadow-glow-strong hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {sending ? (
                       <>
@@ -240,7 +240,7 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        Send Message <FaPaperPlane className="text-xs cursor-pointer" />
+                        Send Message <FaPaperPlane className="text-xs" />
                       </>
                     )}
                   </button>

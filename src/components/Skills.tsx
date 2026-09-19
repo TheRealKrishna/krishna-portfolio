@@ -55,7 +55,7 @@ export default function Skills() {
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="mb-6 text-sm text-muted">{category.blurb}</p>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-3 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                   {category.skills.map((skill, i) => (
                     <motion.div
                       key={skill.name}
@@ -80,7 +80,7 @@ export default function Skills() {
                           className="h-6 w-6 object-contain transition-transform group-hover:scale-110"
                         />
                       </span>
-                      <span className="min-w-0 break-words text-xs font-medium text-white/90 sm:text-sm">
+                      <span className="min-w-0 truncate whitespace-nowrap text-xs font-medium text-white/90 sm:text-sm">
                         {skill.name}
                       </span>
                     </motion.div>
