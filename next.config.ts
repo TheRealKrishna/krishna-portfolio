@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       {
         source: "/resume",
         destination:
-          "https://drive.google.com/file/d/1Sj64IQy28kWttKVu6MXZ4wC5lPyBwJHp/view?usp=sharing",
+          "https://drive.google.com/file/d/1erBOFRlLbWCd-RG8K2uTXhd7L1YuloDn/view?usp=sharing",
         permanent: false,
       },
     ];
