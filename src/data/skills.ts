@@ -69,7 +69,6 @@ export const skillCategories: SkillCategory[] = [
       { name: "Canva", color: "#4552ee", icon: logo("canva.svg") },
       { name: "cPanel", color: "#f36c31", icon: logo("cpanel.png") },
       { name: "Vercel", color: "#cfcfcf", icon: logo("vercel.svg") },
-      { name: "Replit", color: "#f26201", icon: logo("replit.png") },
     ],
   },
 ];
