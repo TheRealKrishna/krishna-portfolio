@@ -7,6 +7,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { currentRole, experienceLabel } from "@/data/experienceYears";
 
 export default async function Home() {
   // Derive the deploy host so project demo subdomains resolve correctly
@@ -21,7 +22,8 @@ export default async function Home() {
       <StarfieldBackground />
       <Navbar />
       <main>
-        <Hero />
+        {/* Computed per request so it ticks over on its own as time passes. */}
+        <Hero experience={experienceLabel()} currentRole={currentRole()} />
         <Skills />
         <Experience />
         <Projects host={host} />

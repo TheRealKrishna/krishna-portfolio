@@ -7,10 +7,41 @@ import {
   FaFilePdf,
   FaLocationDot,
 } from "react-icons/fa6";
-import { experiences, type Experience } from "@/data/experience";
+import { experiences, type Experience, type Role } from "@/data/experience";
+import LinkedText from "./LinkedText";
 import SectionHeading from "./SectionHeading";
 
+/** "February 2024 - March 2024" → "February 2024" (start) / "March 2024" (end). */
+const datePart = (date: string, which: 0 | 1) => date.split(/\s*[-–—]\s*/)[which]?.trim() ?? "";
+
+/** Overall span of a company's roles, e.g. "February 2024 - August 2024". */
+function tenure(roles: Role[]) {
+  if (roles.length === 1) return roles[0].date;
+  // Roles are listed most recent first.
+  return `${datePart(roles[roles.length - 1].date, 0)} - ${datePart(roles[0].date, 1)}`;
+}
+
+function Points({ exp, points }: { exp: Experience; points: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {points.map((point, i) => (
+        <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-white/80">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-iris to-magenta" />
+          <span>
+            <LinkedText text={point} term={exp.project?.name} href={exp.project?.url} />
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function ExperienceCard({ exp }: { exp: Experience }) {
+  const [only] = exp.roles;
+  const multi = exp.roles.length > 1;
+  // When every role shares a title, lead with it: "Frontend Web Developer · 2 roles".
+  const sharedTitle = exp.roles.every((r) => r.title === only.title) ? only.title : null;
+
   return (
     <div className="gradient-border group relative rounded-3xl bg-surface/60 p-5 backdrop-blur-md transition-all duration-300 hover:bg-surface sm:p-7">
       <div className="flex items-start gap-4">
@@ -43,7 +74,9 @@ function ExperienceCard({ exp }: { exp: Experience }) {
             )}
           </h3>
           <p className="text-sm font-semibold text-iris-light">
-            {exp.title} · {exp.type}
+            {multi
+              ? [sharedTitle, `${exp.roles.length} roles`].filter(Boolean).join(" · ")
+              : `${only.title} · ${only.type}`}
           </p>
           <p className="mt-1 flex items-center gap-1.5 text-xs text-muted">
             <FaLocationDot className="text-[0.7rem]" /> {exp.place}
@@ -53,18 +86,34 @@ function ExperienceCard({ exp }: { exp: Experience }) {
 
       {exp.description && (
         <p className="mt-4 text-sm leading-relaxed text-muted">
-          {exp.description}
+          <LinkedText text={exp.description} term={exp.project?.name} href={exp.project?.url} />
         </p>
       )}
 
-      <ul className="mt-4 space-y-2">
-        {exp.points.map((point, i) => (
-          <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-white/80">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-iris to-magenta" />
-            {point}
-          </li>
-        ))}
-      </ul>
+      {multi ? (
+        // One step per role on a mini timeline, most recent first.
+        <ol className="relative mt-6 space-y-6 before:absolute before:bottom-2 before:left-[5px] before:top-2 before:w-px before:bg-gradient-to-b before:from-iris/60 before:to-magenta/20">
+          {exp.roles.map((role) => (
+            <li key={`${role.type}-${role.date}`} className="relative pl-7">
+              <span className="absolute left-0 top-1 h-[11px] w-[11px] rounded-full border-2 border-surface bg-gradient-to-br from-iris to-magenta ring-1 ring-iris/40" />
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <p className="text-sm font-bold text-white">{role.title}</p>
+                <span className="rounded-full border border-iris/30 bg-iris/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-iris-light">
+                  {role.type}
+                </span>
+              </div>
+              <p className="mt-0.5 text-xs text-muted">{role.date}</p>
+              <div className="mt-3">
+                <Points exp={exp} points={role.points} />
+              </div>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <div className="mt-4">
+          <Points exp={exp} points={only.points} />
+        </div>
+      )}
 
       {(exp.link || exp.experienceLetter) && (
         <div className="mt-5 flex flex-wrap gap-3">
@@ -112,7 +161,7 @@ export default function Experience() {
             const isLeft = i % 2 === 0;
             return (
               <div
-                key={`${exp.company}-${i}`}
+                key={exp.company}
                 className="relative pl-9 sm:pl-12 md:grid md:grid-cols-2 md:gap-10 md:pl-0"
               >
                 {/* Node dot */}
@@ -125,14 +174,14 @@ export default function Experience() {
 
                 {/* Date label — opposite side on desktop */}
                 <div
-                  className={`mb-3 md:mb-0 md:flex md:items-center ${
+                  className={`mb-3 md:mb-0 md:flex md:items-start md:pt-5 ${
                     isLeft
                       ? "md:order-2 md:justify-start md:pl-10"
                       : "md:order-1 md:justify-end md:pr-10"
                   }`}
                 >
                   <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold text-muted">
-                    {exp.date}
+                    {tenure(exp.roles)}
                   </span>
                 </div>
 

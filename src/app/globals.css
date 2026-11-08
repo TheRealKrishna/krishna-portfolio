@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 /*
+  Wide landscape screens, where the full-bleed hero photo leaves enough empty
+  background right of the face for the stats column (see Hero.tsx).
+*/
+@custom-variant hero-side (@media (min-width: 80rem) and (min-aspect-ratio: 8/5));
+
+/*
   Design system — "Aurora Noir".
   A deep space-violet canvas with electric-iris accents, glassmorphism,
   and aurora gradients. Tokens are exposed to Tailwind via @theme.
@@ -30,6 +36,30 @@
   --animate-marquee: marquee 40s linear infinite;
   --animate-shimmer: shimmer 2.5s linear infinite;
   --animate-spin-slow: spin 14s linear infinite;
+  --animate-hero-in: hero-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hero photo settles in on first paint. Plain CSS, so it runs before hydration. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero scroll cue: held back until the photo has settled. Opacity only, so it
+   doesn't fight the Framer bob that animates transform on the same element. */
+@keyframes cue-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes aurora {
