@@ -1,6 +1,9 @@
 export type ProjectLink = {
   demo?: string;
-  code: string;
+  /** Omit for private repos, so visitors don't hit a 404. */
+  code?: string;
+  /** Google Play listing; shows a "Google Play" button. */
+  play?: string;
 };
 
 export type Project = {
@@ -11,7 +14,10 @@ export type Project = {
   logo: string;
   /** Accent color used for the card glow / gradient. */
   accent: string;
+  /** Four-digit year; also drives the age colour of the year chip. */
   year: string;
+  /** Short platform label shown on the card, e.g. "Android". */
+  platform?: string;
   featured?: boolean;
   links: ProjectLink;
 };
@@ -19,11 +25,42 @@ export type Project = {
 /**
  * Live demo subdomains are derived from the deploy host at render time
  * (e.g. krishna.lol → x.krishna.lol) so the data stays environment-agnostic.
+ * Listed in display order.
  */
 export function getProjects(host: string): Project[] {
   const base = host || "krishna.lol";
 
   return [
+    {
+      title: "Alarmer",
+      tagline: "The alarm that actually wakes you up.",
+      description:
+        "A native Android alarm app built to ring reliably on phones that aggressively kill background apps, where ordinary alarms silently fail. Dismissing takes a sequence of wake-up challenges — math, memory match, connect-the-dots, patterns, typing, and QR scanning — with a post-alarm wake-up check, stopwatch, timer, world clock, widgets, and 10 languages. Built end to end with Claude.",
+      tech: ["Android", "Kotlin", "Built with Claude"],
+      logo: "/assets/alarmer.png",
+      accent: "#7c4dff",
+      year: "2026",
+      platform: "Android",
+      featured: true,
+      links: {
+        play: "https://play.google.com/store/apps/details?id=com.snowcapstudios.alarmer",
+      },
+    },
+    {
+      title: "Personal Portfolio",
+      tagline: "The site you’re looking at — reimagined.",
+      description:
+        "My personal portfolio, now rebuilt with Next.js, TypeScript, and Tailwind CSS for server-side rendering and first-class SEO. A showcase of projects, skills, and experience with fluid motion, a custom contact pipeline, and a next-generation interface.",
+      tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+      logo: "/assets/Hero.gif",
+      accent: "#a993fe",
+      year: "2026",
+      featured: true,
+      links: {
+        demo: `https://${base}/`,
+        code: "https://github.com/TheRealKrishna/krishna-portfolio",
+      },
+    },
     {
       title: "Twitter Clone",
       tagline: "A full social network, rebuilt from scratch.",
@@ -37,21 +74,6 @@ export function getProjects(host: string): Project[] {
       links: {
         demo: `https://x.${base}/`,
         code: "https://github.com/TheRealKrishna/x.com-clone",
-      },
-    },
-    {
-      title: "GigaChat",
-      tagline: "Real-time messaging that just flows.",
-      description:
-        "A real-time chat application crafted with React, Node.js, WebSocket, and MongoDB. Engage in instant conversations with a dynamic, responsive interface, backed by MongoDB for efficient and secure data management. Built for the power of instant messaging.",
-      tech: ["React", "Node.js", "WebSocket", "MongoDB"],
-      logo: "/assets/gigachat.png",
-      accent: "#ffca00",
-      year: "2024",
-      featured: true,
-      links: {
-        demo: `https://gigachat.${base}/`,
-        code: "https://github.com/TheRealKrishna/giga-chat",
       },
     },
     {
@@ -76,7 +98,7 @@ export function getProjects(host: string): Project[] {
       tech: ["Next.js", "MongoDB"],
       logo: "/assets/amazon.png",
       accent: "#ff9900",
-      year: "2024",
+      year: "2023",
       links: {
         demo: `https://fakestore.${base}/`,
         code: "https://github.com/TheRealKrishna/fake-store",
@@ -94,21 +116,6 @@ export function getProjects(host: string): Project[] {
       links: {
         demo: `https://newsmonkey.${base}/`,
         code: "https://github.com/TheRealKrishna/newsmonkey",
-      },
-    },
-    {
-      title: "Personal Portfolio",
-      tagline: "The site you’re looking at — reimagined.",
-      description:
-        "My personal portfolio, now rebuilt with Next.js, TypeScript, and Tailwind CSS for server-side rendering and first-class SEO. A showcase of projects, skills, and experience with fluid motion, a custom contact pipeline, and a next-generation interface.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-      logo: "/assets/Hero.gif",
-      accent: "#a993fe",
-      year: "2026",
-      featured: true,
-      links: {
-        demo: `https://${base}/`,
-        code: "https://github.com/TheRealKrishna/krishna-portfolio",
       },
     },
   ];

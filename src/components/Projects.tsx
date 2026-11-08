@@ -1,11 +1,84 @@
 "use client";
 
+import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaArrowUpRightFromSquare, FaGithub, FaStar } from "react-icons/fa6";
+import {
+  FaAndroid,
+  FaArrowUpRightFromSquare,
+  FaGithub,
+  FaGooglePlay,
+  FaLock,
+  FaStar,
+} from "react-icons/fa6";
 import { getProjects } from "@/data/projects";
+import { yearTier } from "@/data/yearTier";
 import SectionHeading from "./SectionHeading";
 import TiltCard from "./TiltCard";
+
+/**
+ * Year badge coloured by how recent the work is, with a tooltip on hover or
+ * keyboard focus (tapping focuses it on touch screens).
+ *
+ * The tooltip is portalled to <body>: inside the card it would sit in the
+ * tilt's 3D-transformed layer, which the browser rasterises at an angle, so the
+ * text blurs while the card is tilted. Outside it, it stays crisp and isn't
+ * clipped by the card's overflow-hidden either.
+ */
+function YearChip({ year }: { year: string }) {
+  const tier = yearTier(year);
+  const tipId = useId();
+  const chipRef = useRef<HTMLButtonElement>(null);
+  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+
+  const show = () => {
+    const r = chipRef.current?.getBoundingClientRect();
+    if (r) setPos({ left: r.left, top: r.bottom + 8 });
+  };
+  const hide = () => setPos(null);
+
+  // Fixed-position tooltip: close it if the page scrolls out from under it.
+  useEffect(() => {
+    if (!pos) return;
+    window.addEventListener("scroll", hide, { passive: true });
+    return () => window.removeEventListener("scroll", hide);
+  }, [pos]);
+
+  return (
+    <span className="absolute left-3 top-3 z-10">
+      <button
+        ref={chipRef}
+        type="button"
+        aria-describedby={pos ? tipId : undefined}
+        onMouseEnter={show}
+        onMouseLeave={hide}
+        onFocus={show}
+        onBlur={hide}
+        className={`inline-flex cursor-help items-center gap-1.5 rounded-full border px-2.5 py-1 text-[0.65rem] font-semibold backdrop-blur outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${tier.chip}`}
+      >
+        <span className={`h-1.5 w-1.5 rounded-full ${tier.dot}`} />
+        {year}
+        <span className="sr-only">: {tier.note}</span>
+      </button>
+      {pos &&
+        createPortal(
+          <span
+            id={tipId}
+            role="tooltip"
+            style={{ left: pos.left, top: pos.top }}
+            className="pointer-events-none fixed z-[60] w-56 animate-[tip-in_0.18s_ease-out] rounded-xl border border-white/10 bg-base-2/95 p-3 text-left shadow-[0_12px_40px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+          >
+            <span className={`block text-[0.65rem] font-bold uppercase tracking-wider ${tier.text}`}>
+              {tier.label}
+            </span>
+            <span className="mt-1 block text-xs leading-relaxed text-ink/80">{tier.note}</span>
+          </span>,
+          document.body
+        )}
+    </span>
+  );
+}
 
 export default function Projects({ host }: { host: string }) {
   const projects = getProjects(host);
@@ -65,9 +138,12 @@ export default function Projects({ host }: { host: string }) {
                       <FaStar className="text-[0.6rem]" /> Featured
                     </span>
                   )}
-                  <span className="absolute left-3 top-3 rounded-full border border-white/10 bg-base/60 px-2.5 py-1 text-[0.65rem] font-semibold text-muted backdrop-blur">
-                    {project.year}
-                  </span>
+                  <YearChip year={project.year} />
+                  {project.platform && (
+                    <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-base/60 px-2.5 py-1 text-[0.65rem] font-semibold text-white/80 backdrop-blur">
+                      <FaAndroid className="text-[0.75rem] text-[#3ddc84]" /> {project.platform}
+                    </span>
+                  )}
                 </div>
 
                 {/* Body */}
@@ -102,14 +178,30 @@ export default function Projects({ host }: { host: string }) {
                         <FaArrowUpRightFromSquare className="text-[0.7rem]" /> Live Demo
                       </a>
                     )}
-                    <a
-                      href={project.links.code}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-white/10"
-                    >
-                      <FaGithub className="text-sm" /> Source
-                    </a>
+                    {project.links.play && (
+                      <a
+                        href={project.links.play}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-iris to-magenta px-4 py-2.5 text-xs font-semibold text-white transition-all hover:brightness-110"
+                      >
+                        <FaGooglePlay className="text-[0.75rem]" /> Google Play
+                      </a>
+                    )}
+                    {project.links.code ? (
+                      <a
+                        href={project.links.code}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-white/10"
+                      >
+                        <FaGithub className="text-sm" /> Source
+                      </a>
+                    ) : (
+                      <span className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs font-semibold text-muted">
+                        <FaLock className="text-[0.7rem]" /> Private repo
+                      </span>
+                    )}
                   </div>
                 </div>
               </article>
