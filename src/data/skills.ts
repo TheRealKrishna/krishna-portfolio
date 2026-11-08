@@ -62,7 +62,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "VS Code", color: "#1daaf2", icon: logo("vscode.png") },
       { name: "GitHub", color: "#cfcfcf", icon: logo("github.png") },
-      { name: "ChatGPT", color: "#75ac9d", icon: logo("chatgpt.png") },
+      { name: "Claude", color: "#d97757", icon: logo("claude.svg") },
+      // Codex has no mark of its own; OpenAI uses its logo for it.
+      { name: "Codex", color: "#cfcfcf", icon: logo("openai.svg") },
       { name: "Figma", color: "#a259ff", icon: logo("figma.png") },
       { name: "Canva", color: "#4552ee", icon: logo("canva.svg") },
       { name: "cPanel", color: "#f36c31", icon: logo("cpanel.png") },
