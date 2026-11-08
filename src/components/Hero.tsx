@@ -154,8 +154,11 @@ export default function Hero() {
                 alt="Krishna Agarwal"
                 fill
                 priority
-                sizes="(max-width: 768px) 90vw, 28rem"
-                className="scale-x-[-1] object-cover"
+                quality={90}
+                // The wide photo is cropped into a 4:5 card, so it renders
+                // ~2.24× wider than the card (card is min(28rem, 100vw - 4rem)).
+                sizes="(max-width: 512px) calc((100vw - 4rem) * 2.24), 63rem"
+                className="object-cover object-[50%_20%]"
               />
 
               {/* Gradient overlays for depth and style */}

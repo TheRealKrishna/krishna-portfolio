@@ -16,8 +16,8 @@ export const siteConfig = {
   email: "contact@krishna.cv",
   discord: "therealkrishna",
   location: "India",
-  avatar: "/assets/hero-new.jpg",
-  ogImage: "/assets/hero-new.jpg",
+  avatar: "/assets/hero-krishna.png",
+  ogImage: "/assets/hero-krishna.png",
   resumeUrl: "/resume",
   keywords: [
     "Krishna Agarwal",
