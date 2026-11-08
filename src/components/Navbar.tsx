@@ -63,13 +63,12 @@ export default function Navbar() {
           aria-label="Krishna Agarwal — home"
         >
           <Image
-            src="/assets/logo.gif"
+            src="/assets/logo-icon.png"
             alt="Krishna Agarwal Logo"
             width={36}
             height={36}
             className="rounded-xl transition-transform group-hover:scale-110"
             priority
-            unoptimized
           />
           <span className="text-sm font-bold tracking-tight">
             Krishna
