@@ -163,8 +163,7 @@ export default function Footer() {
 
       <motion.div variants={lastRow} className="border-t border-white/5 px-6 py-6">
         <p className="mx-auto max-w-6xl text-center text-xs text-muted">
-          © {new Date().getFullYear()} Krishna Agarwal. Built with Next.js,
-          TypeScript &amp; Tailwind CSS. Happy coding.
+          © {new Date().getFullYear()} Krishna Agarwal. Happy coding.
         </p>
       </motion.div>
     </motion.footer>
