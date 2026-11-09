@@ -7,6 +7,12 @@
 @custom-variant hero-side (@media (min-width: 80rem) and (min-aspect-ratio: 8/5));
 
 /*
+  Short landscape screens (1366×768, 1280×720 laptops): tighter vertical
+  rhythm in the hero so it fits the first screen without looking zoomed in.
+*/
+@custom-variant short (@media (min-width: 64rem) and (max-height: 50rem));
+
+/*
   Design system — "Aurora Noir".
   A deep space-violet canvas with electric-iris accents, glassmorphism,
   and aurora gradients. Tokens are exposed to Tailwind via @theme.
@@ -126,13 +132,16 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--scroll-pad);
   -webkit-text-size-adjust: 100%;
+  /* Mobile browsers honour html, not just body, for side-to-side scrolling.
+     clip (not hidden) so position: sticky keeps working. */
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--color-base);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

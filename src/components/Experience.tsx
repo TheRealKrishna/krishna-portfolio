@@ -152,7 +152,10 @@ export default function Experience() {
         subtitle="Roles where I shipped real products — AI platforms, 3D design tools, and scalable web apps."
       />
 
-      <div className="relative mt-16">
+      {/* overflow-x-clip: the cards slide in sideways (x: ±40) before they're
+          in view. Unclipped, that offset widens the page on phones and tablets,
+          which mobile browsers then let you scroll or zoom out to. */}
+      <div className="relative mt-16 overflow-x-clip">
         {/* Center spine (desktop) / left spine (mobile) */}
         <div className="absolute left-3 top-0 h-full w-px bg-gradient-to-b from-iris/60 via-magenta/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
 

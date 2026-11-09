@@ -164,7 +164,7 @@ export default function Hero({
           with the social icons. */}
       <motion.div
         style={wide && !reduceMotion ? { opacity: contentOpacity, y: contentY } : undefined}
-        className="relative z-10 px-[6vw] pb-24 pt-[56svh] lg:flex lg:min-h-svh lg:items-center lg:py-28"
+        className="relative z-10 px-[6vw] pb-24 pt-[56svh] lg:flex lg:min-h-svh lg:items-center lg:py-28 short:lg:py-20"
       >
         <div className="hero-side:flex hero-side:w-full hero-side:items-end hero-side:justify-between">
         <motion.div
@@ -186,14 +186,17 @@ export default function Hero({
 
           <motion.p
             variants={item}
-            className="mt-6 text-lg font-medium text-muted"
+            className="mt-6 text-lg font-medium text-muted short:mt-4 short:text-base"
           >
             Hello, I&apos;m
           </motion.p>
 
+          {/* Name size scales with BOTH width and height (min of vw/vh): on
+              short landscape screens like 1366×768 a width-only size reads as
+              zoomed in, because the whole hero has to fit in less height. */}
           <motion.h1
             variants={item}
-            className="mt-2 text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
+            className="mt-2 text-[clamp(2.75rem,min(11vw,11vh),6rem)] font-extrabold leading-[0.95] tracking-tight max-lg:text-[clamp(2.75rem,11vw,4.5rem)]"
           >
             Krishna{" "}
             <span className="block bg-gradient-to-r from-iris-light via-cyan to-magenta bg-clip-text pb-1 text-transparent">
@@ -203,7 +206,7 @@ export default function Hero({
 
           <motion.div
             variants={item}
-            className="mt-5 flex min-h-10 flex-wrap items-center justify-center gap-1 text-xl font-semibold sm:text-2xl lg:justify-start lg:text-3xl"
+            className="mt-5 flex min-h-10 flex-wrap items-center justify-center gap-1 text-xl font-semibold sm:text-2xl lg:justify-start lg:text-3xl short:mt-3 short:text-2xl"
           >
             <span className="text-muted">I&apos;m a</span>
             <Typewriter
@@ -214,7 +217,7 @@ export default function Hero({
 
           <motion.p
             variants={item}
-            className="mt-6 text-pretty text-base leading-relaxed text-ink/75 sm:text-lg"
+            className="mt-6 text-pretty text-base leading-relaxed text-ink/75 sm:text-lg short:mt-4 short:text-base"
           >
             {siteConfig.shortBio} I turn ideas into seamless, visually striking
             web experiences.
@@ -222,27 +225,27 @@ export default function Hero({
 
           <motion.div
             variants={item}
-            className="mt-8 flex w-full flex-col gap-3 xs:flex-row xs:flex-wrap xs:justify-center sm:gap-4 lg:justify-start"
+            className="mt-8 flex w-full flex-col gap-3 xs:flex-row xs:flex-wrap xs:justify-center sm:gap-4 lg:justify-start short:mt-6"
           >
             <a
               href={siteConfig.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-7 py-4 text-sm font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow-strong"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-iris-light to-iris px-7 py-4 text-sm font-semibold text-white shadow-glow transition-all hover:scale-105 hover:shadow-glow-strong short:py-3"
             >
               View Resume
               <FaArrowUpRightFromSquare className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
               href="#projects"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-iris/50 hover:bg-white/10"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-iris/50 hover:bg-white/10 short:py-3"
             >
               See my work
               <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
 
-          <motion.div variants={item} className="mt-8 flex items-center gap-3">
+          <motion.div variants={item} className="mt-8 flex items-center gap-3 short:mt-6">
             {socialLinks.slice(0, 4).map((s) => (
               <a
                 key={s.label}
